@@ -1,3 +1,26 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@400;700&display=swap');
+
+/* Font Utilities */
+.bangers-regular {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +28,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f5f5f5;
   color: #222;
   line-height: 1.6;
@@ -14,9 +37,15 @@ body {
 header {
   background-color: #204d74;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   position: relative;
+}
+
+header h1 {
+  font-family: "Bangers", system-ui;
+  font-size: 2rem;
+  margin-top: 0.5rem;
 }
 
 .profile-pic {
@@ -46,9 +75,11 @@ nav {
 }
 
 .nav-links a {
+  font-family: "Poppins", sans-serif;
   color: white;
   text-decoration: none;
   padding: 0.3rem 0.6rem;
+  transition: background 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -79,12 +110,15 @@ main {
 }
 
 .course-box h2,
-.location-box h2 {
+.location-box h2,
+.certificate-section h2 {
   background: #204d74;
   color: white;
   padding: 0.5rem;
   text-align: center;
   border-radius: 4px 4px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 .location-box img {
@@ -101,28 +135,28 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.certificate-section h2 {
-  background: #204d74;
-  color: white;
-  padding: 0.5rem;
-  text-align: center;
-  border-radius: 4px 4px 0 0;
-}
-
 .filter-buttons {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .filter-buttons button {
   background: black;
   color: white;
-  margin: 0 5px;
+  margin: 0.5rem;
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background: #444;
 }
 
 .course-buttons {
@@ -138,9 +172,15 @@ main {
   border: none;
   border-radius: 6px;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   width: 100%;
   max-width: 140px;
+  transition: background 0.3s ease;
+}
+
+.course-buttons .course-btn:hover {
+  opacity: 0.9;
 }
 
 .cse {
@@ -149,7 +189,7 @@ main {
 }
 
 .wdd {
-  background: #5b2c06;
+  background: #204d74;
   color: white;
 }
 
@@ -159,6 +199,7 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
 }
 
 footer img.flag {
@@ -169,8 +210,10 @@ footer img.flag {
 footer .update {
   color: yellowgreen;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
+/* Responsive Design */
 @media (max-width: 600px) {
   .course-section {
     flex-direction: column;
