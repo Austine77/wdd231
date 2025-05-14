@@ -1,103 +1,189 @@
-/* Normalize or Reset CSS */
+/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
 }
 
+/* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #e6e6e6;
 }
 
-header h1 {
-    margin-bottom: 10px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 nav ul {
-    list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+/* Hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
 }
 
-.view-toggle {
-    text-align: center;
-    margin: 20px;
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.view-toggle button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    cursor: pointer;
+.hero button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-#members-directory {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+/* Page title */
+h2 {
+  margin: 2rem 1rem 1rem;
+  font-size: 2rem;
 }
 
-.member-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease;
+/* Info boxes section */
+.info-boxes {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
-.member-card:hover {
-    transform: scale(1.05);
+.info-boxes > div {
+  flex: 1;
+  background-color: #e6e6e6;
+  padding: 1rem;
+  border-radius: 6px;
 }
 
-.member-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+.info-boxes h3 {
+  background-color: #333;
+  color: white;
+  margin: -1rem -1rem 1rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
-.member-card h3 {
-    margin: 10px 0;
-    color: #4CAF50;
+/* Business directory */
+.directory {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.member-card p {
-    color: #666;
+.directory article {
+  flex: 1;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 250px;
+  max-width: 30%;
 }
 
-.member-card .membership-level {
-    font-weight: bold;
-    color: #FF9800;
+.directory article h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
 }
 
+.directory article h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.directory article p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Placeholder for business image */
+.directory article::before {
+  content: "";
+  display: block;
+  height: 100px;
+  background-color: #ccc;
+  margin: 0.5rem auto 1rem;
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+  background-color: #ddd;
+  font-size: 0.9rem;
 }
 
-footer p {
-    margin: 5px 0;
+footer address {
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.social {
+  margin-top: 1rem;
+}
+
+.social img {
+  width: 32px;
+  height: 32px;
+  margin: 0 0.5rem;
+}
+
+.developer-info {
+  text-align: right;
+  flex: 1;
+  min-width: 250px;
+  margin-top: 1rem;
 }
