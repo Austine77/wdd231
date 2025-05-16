@@ -113,7 +113,7 @@ h2 {
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(101, 7, 160, 0.694);
 }
 
 .info-boxes h3 {
@@ -148,7 +148,7 @@ h2 {
 .directory article h4 {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
-  color: #2E2F45;
+  color: #050e41;
 }
 
 .directory article h5 {
@@ -167,7 +167,7 @@ h2 {
   content: "";
   display: block;
   height: 100px;
-  background-color: #E2E8F0;
+  background-color: #0c277e;
   margin: 0.5rem auto 1rem;
   width: 100%;
   border-radius: 4px;
