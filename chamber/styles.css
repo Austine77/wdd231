@@ -8,8 +8,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+  color: #2C2C2C;
+  background-color: #F8F9FC;
 }
 
 /* Header */
@@ -18,7 +18,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #b1b5bd;
+  background-color: #2E2F45;
+  color: #fff;
 }
 
 .logo {
@@ -35,11 +36,12 @@ header {
 .logo h1 {
   margin: 0;
   font-size: 1.5rem;
+  color: #ffffff;
 }
 
 .logo p {
   font-size: 0.9rem;
-  color: #666;
+  color: #c0c4ff;
 }
 
 nav ul {
@@ -50,8 +52,13 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #000;
+  color: #ffffff;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FF6B6B;
 }
 
 /* Hero section */
@@ -75,15 +82,22 @@ nav a {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border: none;
-  background-color: #ccc;
+  background-color: #FF6B6B;
+  color: #fff;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #e35858;
 }
 
 /* Page title */
 h2 {
   margin: 2rem 1rem 1rem;
   font-size: 2rem;
+  color: #2E2F45;
 }
 
 /* Info boxes section */
@@ -96,14 +110,15 @@ h2 {
 
 .info-boxes > div {
   flex: 1;
-  background-color: #e6e6e6;
+  background-color: #ffffff;
   padding: 1rem;
   border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .info-boxes h3 {
-  background-color: #333;
-  color: white;
+  background-color: #5D5FEF;
+  color: #ffffff;
   margin: -1rem -1rem 1rem;
   padding: 0.5rem;
   font-size: 1.1rem;
@@ -121,23 +136,25 @@ h2 {
 
 .directory article {
   flex: 1;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   min-width: 250px;
   max-width: 30%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .directory article h4 {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
+  color: #2E2F45;
 }
 
 .directory article h5 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: #555;
+  color: #48BB78;
 }
 
 .directory article p {
@@ -150,7 +167,7 @@ h2 {
   content: "";
   display: block;
   height: 100px;
-  background-color: #ccc;
+  background-color: #E2E8F0;
   margin: 0.5rem auto 1rem;
   width: 100%;
   border-radius: 4px;
@@ -158,32 +175,44 @@ h2 {
 
 /* Footer */
 footer {
+  background-color: #2E2F45;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}
+
+.footer-content {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* vertically centers children */
   flex-wrap: wrap;
-  padding: 2rem 1rem;
-  background-color: #ddd;
-  font-size: 0.9rem;
+  gap: 1rem;
 }
 
 footer address {
   font-style: normal;
   line-height: 1.5;
+  flex: 1;
+  min-width: 200px;
 }
 
 .social {
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* space between icons */
+  flex: 0 0 auto; /* don't stretch */
 }
 
 .social img {
   width: 32px;
   height: 32px;
-  margin: 0 0.5rem;
+  filter: brightness(0) invert(1); /* white on dark background */
 }
 
 .developer-info {
   text-align: right;
   flex: 1;
-  min-width: 250px;
-  margin-top: 1rem;
+  min-width: 200px;
+  margin-top: 0;
 }
