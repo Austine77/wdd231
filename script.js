@@ -1,22 +1,26 @@
-// Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const filterButtons = document.querySelectorAll(".filter-buttons button");
-  const courseButtons = document.querySelectorAll(".course-btn");
+// Wait until DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-buttons button');
+  const courseButtons = document.querySelectorAll('.course-btn');
 
   filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
+    button.addEventListener('click', () => {
+      // Remove active class from all filter buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to the clicked button
+      button.classList.add('active');
 
-      courseButtons.forEach(course => {
-        // Show all if 'all' is selected
-        if (filter === "all") {
-          course.style.display = "inline-block";
+      const filter = button.getAttribute('data-filter');
+
+      courseButtons.forEach(courseBtn => {
+        if (filter === 'all') {
+          courseBtn.style.display = 'inline-block';
         } else {
-          // Show only matching course type
-          if (course.classList.contains(filter)) {
-            course.style.display = "inline-block";
+          // Show only buttons with matching class, else hide
+          if (courseBtn.classList.contains(filter)) {
+            courseBtn.style.display = 'inline-block';
           } else {
-            course.style.display = "none";
+            courseBtn.style.display = 'none';
           }
         }
       });
