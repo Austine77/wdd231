@@ -14,14 +14,35 @@
   padding: 0;
 }
 
+/* Font classes */
+.bangers-regular {
+  font-family: 'Bangers', cursive, system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Body uses Poppins regular */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   background: var(--gray-bg);
   color: #222;
   line-height: 1.6;
 }
 
 header {
+  font-family: 'Bangers', cursive, system-ui;
   background-color: var(--primary-color);
   color: var(--light-color);
   padding: 1rem;
@@ -56,6 +77,8 @@ nav {
 }
 
 .nav-links a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   color: var(--light-color);
   text-decoration: none;
   padding: 0.3rem 0.6rem;
@@ -90,6 +113,7 @@ main {
 
 .course-box h2,
 .location-box h2 {
+  font-family: 'Bangers', cursive, system-ui;
   background: var(--primary-color);
   color: var(--light-color);
   padding: 0.5rem;
@@ -112,6 +136,7 @@ main {
 }
 
 .certificate-section h2 {
+  font-family: 'Bangers', cursive, system-ui;
   background: var(--primary-color);
   color: var(--light-color);
   padding: 0.5rem;
@@ -126,6 +151,8 @@ main {
 }
 
 .filter-buttons button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   background: var(--secondary-color);
   color: var(--light-color);
   margin: 0 5px;
@@ -133,6 +160,7 @@ main {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 .filter-buttons button:hover {
@@ -148,10 +176,11 @@ main {
 }
 
 .course-buttons .course-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
-  font-weight: bold;
   cursor: pointer;
   width: 100%;
   max-width: 140px;
@@ -168,6 +197,7 @@ main {
 }
 
 footer {
+  font-family: 'Poppins', sans-serif;
   background-color: var(--primary-color);
   color: var(--light-color);
   text-align: center;
