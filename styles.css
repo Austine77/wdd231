@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #1E3A8A;   /* Deep Blue */
+  --secondary-color: #4CAF50; /* Green */
+  --accent1-color: #FF8C00;   /* Orange */
+  --accent2-color: #F44336;   /* Red */
+  --light-color: #ffffff;
+  --dark-color: #000000;
+  --gray-bg: #f5f5f5;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,14 +16,14 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: var(--gray-bg);
   color: #222;
   line-height: 1.6;
 }
 
 header {
-  background-color: #204d74;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--light-color);
   padding: 1rem;
   text-align: center;
   position: relative;
@@ -22,7 +32,7 @@ header {
 .profile-pic {
   width: 80px;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid var(--light-color);
   position: absolute;
   top: 10px;
   left: 10px;
@@ -37,7 +47,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: #000;
+  background: var(--dark-color);
   padding: 0.5rem;
 }
 
@@ -46,15 +56,15 @@ nav {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--light-color);
   text-decoration: none;
   padding: 0.3rem 0.6rem;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background: #ccc;
-  color: #000;
+  background: var(--accent2-color);
+  color: var(--light-color);
   border-radius: 4px;
 }
 
@@ -71,7 +81,7 @@ main {
 
 .course-box,
 .location-box {
-  background: #fff;
+  background: var(--light-color);
   padding: 1rem;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -80,8 +90,8 @@ main {
 
 .course-box h2,
 .location-box h2 {
-  background: #204d74;
-  color: white;
+  background: var(--primary-color);
+  color: var(--light-color);
   padding: 0.5rem;
   text-align: center;
   border-radius: 4px 4px 0 0;
@@ -95,15 +105,15 @@ main {
 
 .certificate-section {
   margin-top: 2rem;
-  background: #fff;
+  background: var(--light-color);
   padding: 1rem;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .certificate-section h2 {
-  background: #204d74;
-  color: white;
+  background: var(--primary-color);
+  color: var(--light-color);
   padding: 0.5rem;
   text-align: center;
   border-radius: 4px 4px 0 0;
@@ -116,13 +126,17 @@ main {
 }
 
 .filter-buttons button {
-  background: black;
-  color: white;
+  background: var(--secondary-color);
+  color: var(--light-color);
   margin: 0 5px;
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.filter-buttons button:hover {
+  background: var(--accent2-color);
 }
 
 .course-buttons {
@@ -144,18 +158,18 @@ main {
 }
 
 .cse {
-  background: #5b2c06;
-  color: white;
+  background: var(--accent1-color);
+  color: var(--light-color);
 }
 
 .wdd {
-  background: #5b2c06;
-  color: white;
+  background: var(--accent1-color);
+  color: var(--light-color);
 }
 
 footer {
-  background-color: #204d74;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--light-color);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
@@ -167,7 +181,7 @@ footer img.flag {
 }
 
 footer .update {
-  color: yellowgreen;
+  color: var(--secondary-color);
   font-size: 0.9rem;
 }
 
