@@ -158,14 +158,15 @@ h2 {
 
 /* Business directory */
 .directory {
-  display: flex;
   gap: 1rem;
   padding: 0 1rem 2rem;
   flex-wrap: wrap;
   justify-content: space-between;
+  display: flex;
 }
 
-.directory article {
+/* GRID VIEW */
+.directory.grid-view article {
   flex: 1 1 300px;
   background-color: #ffffff;
   padding: 1rem;
@@ -177,29 +178,59 @@ h2 {
   transition: box-shadow 0.3s ease;
 }
 
-.directory article:hover {
+.directory.grid-view article:hover {
   box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-.directory article h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
+/* LIST VIEW */
+.directory.list-view {
+  flex-direction: column;
+  padding: 0 2rem 2rem;
+}
+
+.directory.list-view article {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow-light);
+  margin-bottom: 1rem;
+  align-items: center;
+  max-width: 100%;
+  text-align: left;
+  transition: box-shadow 0.3s ease;
+}
+
+.directory.list-view article:hover {
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.directory.list-view article::before {
+  display: none; /* Hide image placeholder in list */
+}
+
+/* For list view content spacing */
+.directory.list-view article h4 {
+  flex: 0 0 200px;
   color: var(--primary-color);
+  margin-bottom: 0;
 }
 
-.directory article h5 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+.directory.list-view article h5 {
+  flex: 0 0 150px;
   color: var(--secondary-color);
+  margin-bottom: 0;
 }
 
-.directory article p {
-  margin: 0.25rem 0;
+.directory.list-view article p {
+  flex: 1;
   font-size: 0.9rem;
+  margin: 0 0.5rem 0 0;
 }
 
-/* Placeholder for business image */
-.directory article::before {
+/* Placeholder for business image in grid view */
+.directory.grid-view article::before {
   content: "";
   display: block;
   height: 100px;
@@ -210,8 +241,46 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.directory article:hover::before {
+.directory.grid-view article:hover::before {
   background-color: var(--accent1-color);
+}
+
+/* Directory toggle buttons */
+.directory-toggle {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  gap: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.directory-toggle button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.directory-toggle button[aria-pressed="true"] {
+  background-color: var(--accent1-color);
+  color: var(--text-dark);
+}
+
+.directory-toggle button:hover,
+.directory-toggle button:focus {
+  background-color: var(--accent2-color);
+  color: var(--text-light);
+  outline: none;
+}
+
+.directory-toggle button:focus-visible {
+  outline: 2px dashed var(--accent2-color);
+  outline-offset: 2px;
 }
 
 /* Footer */
@@ -301,13 +370,25 @@ footer address {
     flex-direction: column;
   }
 
-  .directory {
+  .directory.grid-view {
     flex-direction: column;
   }
 
-  .directory article {
+  .directory.grid-view article {
     max-width: 100%;
     min-width: 100%;
+  }
+
+  .directory.list-view article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .directory.list-view article h4,
+  .directory.list-view article h5,
+  .directory.list-view article p {
+    flex: none;
+    margin-bottom: 0.5rem;
   }
 
   header {

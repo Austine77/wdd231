@@ -60,7 +60,8 @@
             <strong>Business Networking Mixer</strong><br />
             <em>June 10, 2025 | 5:00 PM - 8:00 PM</em><br />
             Location: Essien Udim Community Hall<br />
-            Join local entrepreneurs and business leaders for an evening of networking, refreshments, and opportunities.
+            Join local entrepreneurs and business leaders for an evening of networking, refreshments, and
+            opportunities.
           </li>
           <li>
             <strong>Small Business Workshop</strong><br />
@@ -94,7 +95,13 @@
       </div>
     </section>
 
-    <section class="directory">
+    <!-- Directory View Toggle -->
+    <section class="directory-toggle" aria-label="Toggle directory view">
+      <button id="gridViewBtn" aria-pressed="true" aria-label="Grid view">Grid View</button>
+      <button id="listViewBtn" aria-pressed="false" aria-label="List view">List View</button>
+    </section>
+
+    <section class="directory grid-view">
       <article>
         <h4>TechNova Solutions</h4>
         <p>Innovate the Future.</p>
@@ -161,34 +168,49 @@
           Sunday Prince Augustine<br />
           &copy; Essien Udim Chamber of Commerce
         </p>
-        <p id="lastModified"></p>
       </div>
     </div>
 
-    <!-- Centered Section -->
     <div class="centered-footer">
-      <p>©2025 🌺 Sunday Prince Augustine @ SP Web & Software Solution 🌴Brigham Young University- Idaho. All rights
+      <p>2025 🌺 Sunday Prince Augustine @ SP Web & Software Solution 🌴Brigham Young University- Idaho. All rights
         reserved</p>
     </div>
+
+    <footer>
+      <p>&copy; <span id="year"></span></p>
+      <p id="lastModified"></p>
+    </footer>
+
   </footer>
- <script>
-    // Display the last modified date in the footer in a readable format
-    document.addEventListener("DOMContentLoaded", () => {
-      const lastModifiedElem = document.getElementById("lastModified");
-      if (lastModifiedElem) {
-        const lastModified = new Date(document.lastModified);
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-        lastModifiedElem.textContent = `Last Modified: ${lastModified.toLocaleString(undefined, options)}`;
+
+  <script src="directory.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gridBtn = document.getElementById('gridViewBtn');
+      const listBtn = document.getElementById('listViewBtn');
+      const directory = document.querySelector('.directory');
+
+      function setView(view) {
+        if (view === 'grid') {
+          directory.classList.add('grid-view');
+          directory.classList.remove('list-view');
+          gridBtn.setAttribute('aria-pressed', 'true');
+          listBtn.setAttribute('aria-pressed', 'false');
+        } else {
+          directory.classList.add('list-view');
+          directory.classList.remove('grid-view');
+          gridBtn.setAttribute('aria-pressed', 'false');
+          listBtn.setAttribute('aria-pressed', 'true');
+        }
       }
 
-      // Alert message when the hero button is clicked
-      const heroButton = document.querySelector(".hero button");
-      if (heroButton) {
-        heroButton.addEventListener("click", () => {
-          alert("Welcome to Essien Udim Chamber of Commerce!");
-        });
-      }
+      // Default to grid view on load
+      setView('grid');
+
+      gridBtn.addEventListener('click', () => setView('grid'));
+      listBtn.addEventListener('click', () => setView('list'));
     });
   </script>
 </body>
+
 </html>
