@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SP Marketing - Services</title>
+  <meta name="description" content="Discover the wide range of marketing services offered by SP Marketing." />
+  <meta name="author" content="Sunday Prince Augustine" />
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Open Graph meta -->
+  <meta property="og:title" content="SP Marketing - Services" />
+  <meta property="og:description" content="Explore our marketing services tailored to your needs." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="SP Marketing Logo" /></a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="README.md">Attributions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Services</h1>
+    <section id="services-list" class="services-grid">
+      <!-- Dynamic service cards will be injected here -->
+    </section>
+
+    <!-- Modal dialog -->
+    <dialog id="service-modal" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-desc">
+      <button id="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="" />
+      <p id="modal-desc"></p>
+      <p><strong>Price:</strong> $<span id="modal-price"></span></p>
+    </dialog>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SP Marketing. All rights reserved.</p>
+    <p><a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Project Demo Video</a></p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
