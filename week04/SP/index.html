@@ -17,7 +17,7 @@
       color: #131921;
     }
     header {
-      background: #131921;
+      background: #1E3A8A; /* PRIMARY */
       color: white;
       padding: 10px 20px;
       display: flex;
@@ -44,8 +44,8 @@
       transition: background 0.3s ease;
     }
     .nav-menu a:hover {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00; /* ACCENT1 */
+      color: white;
     }
     .search-box {
       flex: 1;
@@ -61,7 +61,7 @@
       font-size: 16px;
     }
     .search-box button {
-      background: #febd69;
+      background: #FF8C00; /* ACCENT1 */
       border: none;
       padding: 10px 20px;
       cursor: pointer;
@@ -69,9 +69,10 @@
       font-weight: 700;
       font-size: 16px;
       transition: background 0.3s ease;
+      color: white;
     }
     .search-box button:hover {
-      background: #f7a600;
+      background: #F44336; /* ACCENT2 */
     }
     .nav-links {
       display: flex;
@@ -88,8 +89,8 @@
       transition: background 0.3s ease;
     }
     .nav-links a:hover {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00; /* ACCENT1 */
+      color: white;
     }
     .hero {
       background: url('https://m.media-amazon.com/images/I/71h15GsHkvL._SX3000_.jpg') no-repeat center center/cover;
@@ -107,7 +108,7 @@
       font-weight: 700;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
     }
-    .about-section {
+    .about-text {
       max-width: 1200px;
       margin: 40px auto;
       background: white;
@@ -116,7 +117,11 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
       line-height: 1.6;
       font-size: 1.15rem;
-      color: #333;
+      color: #131921; /* changed to primary dark for consistency */
+    }
+    .about-text h2 {
+      color: #1E3A8A; /* PRIMARY */
+      margin-bottom: 12px;
     }
     .products {
       max-width: 1200px;
@@ -136,10 +141,12 @@
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease;
+      border: 2px solid transparent;
     }
     .product:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      border-color: #4CAF50; /* SECONDARY */
     }
     .product img {
       max-width: 100%;
@@ -152,16 +159,16 @@
       margin: 12px 0 8px 0;
       font-weight: 700;
       font-size: 1.2rem;
-      color: #131921;
+      color: #1E3A8A; /* PRIMARY */
     }
     .product p {
       font-size: 1.15rem;
-      color: #febd69;
+      color: #4CAF50; /* SECONDARY */
       font-weight: 700;
       margin-bottom: 15px;
     }
     .product button {
-      background: #febd69;
+      background: #FF8C00; /* ACCENT1 */
       border: none;
       padding: 12px 0;
       font-weight: 700;
@@ -169,12 +176,13 @@
       cursor: pointer;
       font-size: 1rem;
       transition: background 0.3s ease;
+      color: white;
     }
     .product button:hover {
-      background: #f7a600;
+      background: #F44336; /* ACCENT2 */
     }
     .footer {
-      background: #232f3e;
+      background: #1E3A8A; /* PRIMARY */
       color: white;
       text-align: center;
       padding: 25px 20px;
@@ -237,11 +245,11 @@
     Empower Your Business with SP Marketing
   </section>
 
- <section class="about-text">
-      <h2>Welcome to SP Marketing</h2>
-      <p>At SP Marketing, we specialize in innovative marketing solutions designed to grow your business and amplify your brand’s voice. Founded with a passion for creativity and results, our team is dedicated to delivering tailored strategies that drive real success.</p>
-      <p>From digital campaigns to brand consulting, we combine data-driven insights with creative excellence to help our clients thrive in a competitive marketplace.</p>
-    </section>
+  <section class="about-text" id="about">
+    <h2>Welcome to SP Marketing</h2>
+    <p>At SP Marketing, we specialize in innovative marketing solutions designed to grow your business and amplify your brand’s voice. Founded with a passion for creativity and results, our team is dedicated to delivering tailored strategies that drive real success.</p>
+    <p>From digital campaigns to brand consulting, we combine data-driven insights with creative excellence to help our clients thrive in a competitive marketplace.</p>
+  </section>
 
   <section class="products" id="services">
     <div class="product">
@@ -263,30 +271,15 @@
       <button>Add to Cart</button>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Digital Advertising" />
-      <h4>Digital Advertising</h4>
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Marketing Analytics" />
+      <h4>Marketing Analytics</h4>
       <p>$249.99</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=400&q=80" alt="Email Marketing" />
-      <h4>Email Marketing</h4>
-      <p>$129.99</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=400&q=80" alt="Brand Strategy" />
-      <h4>Brand Strategy</h4>
-      <p>$179.99</p>
       <button>Add to Cart</button>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 SP Marketing. All rights reserved.</p>
+  <footer class="footer" id="contact">
+    &copy; 2025 SP Marketing. All rights reserved.
   </footer>
-
-  <script src="main.js"></script>
-
 </body>
 </html>

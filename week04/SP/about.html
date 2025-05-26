@@ -19,7 +19,7 @@
       flex-direction: column;
     }
     header {
-      background: #131921;
+      background: #1E3A8A; /* Primary */
       color: white;
       padding: 15px 30px;
       display: flex;
@@ -47,12 +47,12 @@
       transition: background-color 0.3s ease;
     }
     nav.nav-menu a:hover {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00; /* Accent1 orange */
+      color: white;
     }
     nav.nav-menu a.active {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00; /* Accent1 orange */
+      color: white;
       font-weight: 700;
     }
     .search-box {
@@ -64,41 +64,25 @@
     .search-box input {
       flex: 1;
       padding: 12px 16px;
-      border: none;
+      border: 2px solid #4CAF50; /* Secondary green */
+      border-right: none;
       border-radius: 4px 0 0 4px;
       font-size: 16px;
+      outline-color: #4CAF50;
     }
     .search-box button {
-      background: #febd69;
+      background: #4CAF50; /* Secondary green */
       border: none;
       padding: 12px 24px;
       cursor: pointer;
       border-radius: 0 4px 4px 0;
       font-weight: 600;
       font-size: 16px;
+      color: white;
       transition: background-color 0.3s ease;
     }
     .search-box button:hover {
-      background: #f4a50c;
-    }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 10px 16px;
-      border-radius: 4px;
-      background: #37475a;
-      transition: background-color 0.3s ease;
-    }
-    .nav-links a:hover {
-      background: #febd69;
-      color: #131921;
+      background: #388E3C; /* Slightly darker green */
     }
     main {
       flex: 1;
@@ -120,19 +104,19 @@
       font-weight: 700;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     }
-    section.about-text {
+    section.about-section {
       background: white;
       padding: 30px 40px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       margin-bottom: 40px;
     }
-    section.about-text h2 {
+    section.about-section h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #131921;
+      color: #1E3A8A; /* Primary */
     }
-    section.about-text p {
+    section.about-section p {
       font-size: 1.1rem;
       margin-bottom: 18px;
       color: #555;
@@ -163,7 +147,7 @@
     .mission-text h3 {
       font-size: 2rem;
       margin-bottom: 18px;
-      color: #131921;
+      color: #1E3A8A; /* Primary */
     }
     .mission-text p {
       font-size: 1.1rem;
@@ -176,7 +160,7 @@
     section.team h2 {
       font-size: 2.5rem;
       margin-bottom: 30px;
-      color: #131921;
+      color: #1E3A8A; /* Primary */
       text-align: center;
     }
     .team-members {
@@ -191,6 +175,7 @@
       text-align: center;
       padding: 20px;
       transition: transform 0.3s ease;
+      border-top: 6px solid #4CAF50; /* Secondary green */
     }
     .team-member:hover {
       transform: translateY(-8px);
@@ -202,19 +187,19 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
-      border: 3px solid #febd69;
+      border: 3px solid #FF8C00; /* Accent1 orange */
     }
     .team-member h4 {
       font-size: 1.3rem;
       margin-bottom: 6px;
-      color: #131921;
+      color: #1E3A8A; /* Primary */
     }
     .team-member p {
       font-size: 1rem;
       color: #666;
     }
     footer {
-      background: #232f3e;
+      background: #1E3A8A; /* Primary */
       color: white;
       text-align: center;
       padding: 20px;
@@ -259,26 +244,21 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="search-box">
-      <input type="text" placeholder="Search services..." />
-      <button>Search</button>
-    </div>
-    
   </header>
 
   <main>
     <div class="hero">About Us</div>
 
     <section class="about-section" id="about">
-    <h2>About SP Marketing</h2>
-    <p>
-      SP Marketing is your trusted partner for innovative marketing solutions, delivering tailored strategies that boost your brand visibility and maximize your ROI.
-      Our expert team leverages the latest digital trends to craft impactful campaigns that connect you with your target audience effectively.
-    </p>
-    <p>
-      We specialize in e-commerce product marketing, digital advertising, content creation, and customer engagement strategies designed to grow your business.
-    </p>
-  </section>
+      <h2>About SP Marketing</h2>
+      <p>
+        SP Marketing is your trusted partner for innovative marketing solutions, delivering tailored strategies that boost your brand visibility and maximize your ROI.
+        Our expert team leverages the latest digital trends to craft impactful campaigns that connect you with your target audience effectively.
+      </p>
+      <p>
+        We specialize in e-commerce product marketing, digital advertising, content creation, and customer engagement strategies designed to grow your business.
+      </p>
+    </section>
 
     <section class="mission">
       <div class="mission-image">
@@ -286,7 +266,9 @@
       </div>
       <div class="mission-text">
         <h3>Our Mission</h3>
-        <p>To empower businesses by delivering innovative, effective, and customized marketing strategies that foster growth, engagement, and long-term success. We strive to create meaningful connections between brands and their audiences, ensuring every message resonates and inspires.</p>
+        <p>
+          To empower businesses by providing innovative and results-driven marketing strategies that enhance brand recognition and customer engagement.
+        </p>
       </div>
     </section>
 
@@ -294,24 +276,24 @@
       <h2>Meet Our Team</h2>
       <div class="team-members">
         <div class="team-member">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="John Doe - CEO" />
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" />
           <h4>John Doe</h4>
-          <p>Chief Executive Officer</p>
+          <p>Chief Marketing Officer</p>
         </div>
         <div class="team-member">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith - Marketing Director" />
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" />
           <h4>Jane Smith</h4>
-          <p>Marketing Director</p>
+          <p>Lead Strategist</p>
         </div>
         <div class="team-member">
-          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Michael Brown - Creative Lead" />
-          <h4>Michael Brown</h4>
-          <p>Creative Lead</p>
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mike Johnson" />
+          <h4>Mike Johnson</h4>
+          <p>Creative Director</p>
         </div>
         <div class="team-member">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Johnson - Digital Strategist" />
-          <h4>Emily Johnson</h4>
-          <p>Digital Strategist</p>
+          <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Lisa Wong" />
+          <h4>Lisa Wong</h4>
+          <p>Digital Marketing Specialist</p>
         </div>
       </div>
     </section>
@@ -320,8 +302,5 @@
   <footer>
     &copy; 2025 SP Marketing. All rights reserved.
   </footer>
-
-  <script src="main.js"></script>
-
 </body>
 </html>

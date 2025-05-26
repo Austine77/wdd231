@@ -14,13 +14,13 @@
     }
     body {
       background: #f2f2f2;
-      color: #131921;
+      color: #1E3A8A; /* primary color for text */
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
     header {
-      background: #131921;
+      background: #1E3A8A; /* primary */
       color: white;
       padding: 10px 20px;
       display: flex;
@@ -31,6 +31,7 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
+      color: #FFFFFF;
     }
     nav.nav-menu {
       display: flex;
@@ -47,8 +48,8 @@
     }
     nav.nav-menu a:hover,
     nav.nav-menu a[aria-current="page"] {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00; /* accent1 orange */
+      color: white;
     }
     .search-box {
       flex: 1;
@@ -59,16 +60,22 @@
     .search-box input {
       flex: 1;
       padding: 10px;
-      border: none;
+      border: 1px solid #4CAF50; /* secondary green border */
       border-radius: 4px 0 0 4px;
+      font-size: 1rem;
     }
     .search-box button {
-      background: #febd69;
+      background: #4CAF50; /* secondary green */
       border: none;
       padding: 10px 20px;
       cursor: pointer;
       border-radius: 0 4px 4px 0;
       font-weight: 600;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    .search-box button:hover {
+      background: #388E3C; /* darker green on hover */
     }
     .nav-links {
       display: flex;
@@ -85,8 +92,8 @@
       transition: background 0.3s ease;
     }
     .nav-links a:hover {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00;
+      color: white;
     }
     main {
       flex: 1;
@@ -95,11 +102,11 @@
       background: white;
       padding: 30px 40px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
     }
     h1 {
       margin-bottom: 25px;
-      color: #131921;
+      color: #1E3A8A; /* primary */
       font-weight: 700;
       font-size: 2rem;
       text-align: center;
@@ -120,18 +127,26 @@
     textarea {
       padding: 12px;
       font-size: 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid #4CAF50; /* secondary green border */
       border-radius: 5px;
       resize: vertical;
       width: 100%;
       font-family: 'Roboto', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #FF8C00; /* accent1 orange on focus */
+      outline: none;
+      box-shadow: 0 0 5px #FF8C00;
     }
     textarea {
       min-height: 120px;
     }
     button[type="submit"] {
-      background: #febd69;
-      color: #131921;
+      background: #FF8C00; /* accent1 orange */
+      color: white;
       border: none;
       padding: 15px;
       font-weight: 700;
@@ -141,10 +156,10 @@
       transition: background 0.3s ease;
     }
     button[type="submit"]:hover {
-      background: #f7a600;
+      background: #F44336; /* accent2 red */
     }
     footer {
-      background: #232f3e;
+      background: #1E3A8A; /* primary */
       color: white;
       text-align: center;
       padding: 20px;
@@ -182,11 +197,6 @@
       <a href="contact.html" aria-current="page">Contact</a>
     </nav>
 
-    <div class="search-box">
-      <input type="text" placeholder="Search services..." />
-      <button>Search</button>
-    </div>
-    
   </header>
 
   <main>
@@ -213,6 +223,5 @@
   </footer>
 
   <script src="main.js"></script>
-
 </body>
 </html>
