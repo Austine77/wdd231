@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SP Marketing - Our Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -41,7 +41,8 @@
       border-radius: 4px;
       transition: background 0.3s ease;
     }
-    .nav-menu a:hover {
+    .nav-menu a:hover,
+    .nav-menu a[aria-current="page"] {
       background: #febd69;
       color: #131921;
     }
@@ -84,7 +85,7 @@
       color: #131921;
     }
     .hero {
-      background: url('https://via.placeholder.com/1500x400?text=SP+Marketing+Services') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
       height: 400px;
       margin-top: 10px;
       border-radius: 8px;
@@ -92,9 +93,31 @@
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 2.5rem;
-      font-weight: bold;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      position: relative;
+      padding: 20px;
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero button {
+      background: #febd69;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .hero button:hover {
+      background: #f7a600;
     }
     .services {
       padding: 20px;
@@ -154,7 +177,8 @@
         margin: 10px 0;
         width: 100%;
       }
-      .search-box input, .search-box button {
+      .search-box input,
+      .search-box button {
         width: 100%;
         margin-bottom: 10px;
         border-radius: 4px;
@@ -169,6 +193,17 @@
         width: 100%;
         margin-top: 10px;
       }
+      .hero {
+        height: 300px;
+        padding: 15px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -176,7 +211,7 @@
   <header>
     <div class="logo">SP Marketing</div>
     
-    <nav class="nav-menu">
+    <nav class="nav-menu" role="navigation" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="service.html" aria-current="page">Services</a>
       <a href="about.html">About</a>
@@ -184,41 +219,39 @@
     </nav>
 
     <div class="search-box">
-      <input type="text" placeholder="Search services...">
+      <input type="text" placeholder="Search services..." aria-label="Search services" />
       <button>Search</button>
-    </div>
-    
-    <div class="nav-links">
-      <a href="signin.html">Sign In</a>
-      <a href="cart.html">Cart</a>
     </div>
   </header>
 
-  <section class="hero">
-    Our Expert Marketing Services
+  <section class="hero" role="img" aria-label="Marketing services hero banner">
+    <div class="hero-content">
+      <h1>Our Expert Marketing Services</h1>
+      <button onclick="window.location.href='contact.html'">Contact Us</button>
+    </div>
   </section>
 
-  <section class="services">
+  <section class="services" aria-label="List of marketing services">
     <div class="service">
-      <img src="https://via.placeholder.com/250x150?text=SEO" alt="SEO Service" />
+      <img src="ceo.png" alt="SEO Service" />
       <h4>Search Engine Optimization (SEO)</h4>
       <p>Improve your website's ranking and increase organic traffic with our tailored SEO strategies.</p>
       <button>Learn More</button>
     </div>
     <div class="service">
-      <img src="https://via.placeholder.com/250x150?text=Content+Marketing" alt="Content Marketing" />
+      <img src="content.jpg" alt="Content Marketing" />
       <h4>Content Marketing</h4>
       <p>Create engaging and valuable content to attract and retain your target audience effectively.</p>
       <button>Learn More</button>
     </div>
     <div class="service">
-      <img src="https://via.placeholder.com/250x150?text=Social+Media" alt="Social Media Marketing" />
+      <img src="social.jpg" alt="Social Media Marketing" />
       <h4>Social Media Marketing</h4>
       <p>Boost your brand awareness and engagement across popular social media platforms.</p>
       <button>Learn More</button>
     </div>
     <div class="service">
-      <img src="https://via.placeholder.com/250x150?text=Email+Marketing" alt="Email Marketing" />
+      <img src="email.jpg" alt="Email Marketing" />
       <h4>Email Marketing</h4>
       <p>Reach your customers directly with personalized email campaigns that convert.</p>
       <button>Learn More</button>
@@ -226,10 +259,4 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 SP Marketing. All rights reserved.</p>
-  </footer>
-
-  <script src="main.js"></script>
-
-</body>
-</html>
+    <p>&copy; 2025 SP Marketing. All rights reserved.</p
