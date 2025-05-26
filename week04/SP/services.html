@@ -24,10 +24,10 @@
       justify-content: space-between;
       flex-wrap: wrap;
     }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+    .site-logo {
+  max-width: 80px;
+  height: auto;
+}
     .nav-menu {
       display: flex;
       gap: 20px;
@@ -163,6 +163,23 @@
     .service button:hover {
       background: #F44336;
     }
+
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #1E3A8A;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #FF8C00;
+    }
+
     .footer {
       background: #1E3A8A;
       color: white;
@@ -209,7 +226,8 @@
 </head>
 <body>
   <header>
-    <div class="logo">SP Marketing</div>
+    <img src="logo.jpg" alt="SP Marketing Photo" class="site-logo" />
+
     <nav class="nav-menu" role="navigation" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="service.html" aria-current="page">Services</a>
@@ -250,6 +268,12 @@
       <h4>Email Marketing</h4>
       <p>Reach your customers directly with personalized email campaigns that convert.</p>
       <button>Learn More</button>
+       <div class="social-icons">
+          <a href="facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com"><i class="fab fa-linkedin"></i></a>
+        </div>
     </div>
   </section>
 

@@ -27,12 +27,11 @@
       justify-content: space-between;
       flex-wrap: wrap;
     }
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      cursor: pointer;
-    }
+   .site-logo {
+  max-width: 80px;
+  height: auto;
+}
+
     nav.nav-menu {
       display: flex;
       gap: 25px;
@@ -55,35 +54,7 @@
       color: white;
       font-weight: 700;
     }
-    .search-box {
-      flex: 1;
-      margin: 0 30px;
-      display: flex;
-      min-width: 250px;
-    }
-    .search-box input {
-      flex: 1;
-      padding: 12px 16px;
-      border: 2px solid #4CAF50; /* Secondary green */
-      border-right: none;
-      border-radius: 4px 0 0 4px;
-      font-size: 16px;
-      outline-color: #4CAF50;
-    }
-    .search-box button {
-      background: #4CAF50; /* Secondary green */
-      border: none;
-      padding: 12px 24px;
-      cursor: pointer;
-      border-radius: 0 4px 4px 0;
-      font-weight: 600;
-      font-size: 16px;
-      color: white;
-      transition: background-color 0.3s ease;
-    }
-    .search-box button:hover {
-      background: #388E3C; /* Slightly darker green */
-    }
+    
     main {
       flex: 1;
       max-width: 1100px;
@@ -198,6 +169,23 @@
       font-size: 1rem;
       color: #666;
     }
+
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #1E3A8A;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #FF8C00;
+    }
+
     footer {
       background: #1E3A8A; /* Primary */
       color: white;
@@ -235,7 +223,7 @@
 </head>
 <body>
   <header>
-    <div class="logo">SP Marketing</div>
+    <img src="logo.jpg" alt="SP Marketing Photo" class="site-logo" />
 
     <nav class="nav-menu">
       <a href="index.html">Home</a>
@@ -247,7 +235,7 @@
   </header>
 
   <main>
-    <div class="hero">About Us</div>
+    <div class="hero">About Us SP Marketing</div>
 
     <section class="about-section" id="about">
       <h2>About SP Marketing</h2>
@@ -294,6 +282,12 @@
           <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Lisa Wong" />
           <h4>Lisa Wong</h4>
           <p>Digital Marketing Specialist</p>
+        </div>
+         <div class="social-icons">
+          <a href="facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </section>

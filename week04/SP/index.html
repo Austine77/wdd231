@@ -25,11 +25,11 @@
       justify-content: space-between;
       flex-wrap: wrap;
     }
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+
+    .site-logo {
+  max-width: 80px;
+  height: auto;
+}
     .nav-menu {
       display: flex;
       gap: 20px;
@@ -181,6 +181,23 @@
     .product button:hover {
       background: #F44336; /* ACCENT2 */
     }
+
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #1E3A8A;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #FF8C00;
+    }
+
     .footer {
       background: #1E3A8A; /* PRIMARY */
       color: white;
@@ -225,19 +242,14 @@
 </head>
 <body>
   <header>
-    <div class="logo">SP Marketing</div>
+   <img src="logo.jpg" alt="SP Marketing Photo" class="site-logo" />
     
     <nav class="nav-menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="#contact.html">Contact</a>
     </nav>
-
-    <div class="search-box">
-      <input type="text" placeholder="Search products..." />
-      <button>Search</button>
-    </div>
     
   </header>
 
@@ -271,9 +283,93 @@
       <button>Add to Cart</button>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Marketing Analytics" />
-      <h4>Marketing Analytics</h4>
-      <p>$249.99</p>
+      <img src="https://m.media-amazon.com/images/I/61gKkYQn6lL._AC_UY327_FMwebp_QL65_.jpg" alt="Acer Aspire 3 A315-24P-R7VH Slim Laptop" />
+      <h4>Acer Aspire 3 A315-24P-R7VH Slim Laptop </h4>
+      <p>$449.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71kmViEHobL._AC_UY327_FMwebp_QL65_.jpg" alt="Acer Aspire 5 15 Slim Laptop" />
+      <h4>Acer Aspire 5 15 Slim Laptop </h4>
+      <p>$350.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71vwx59yoVL._AC_UY327_FMwebp_QL65_.jpg" alt="15.6 Inch Laptop" />
+      <h4>15.6 Inch Laptop  </h4>
+      <p>$649.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/713Gvx2nTlL._AC_UY327_FMwebp_QL65_.jpg" alt="jumper 16 Inch Laptop" />
+      <h4>jumper 16 Inch Laptop</h4>
+      <p>$320.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/815uX7wkOZS._AC_UY327_FMwebp_QL65_.jpg" alt="HP 14 Laptop" />
+      <h4>HP 14 Laptop, Intel Celeron N4020</h4>
+      <p>$440.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71JdqA5MGUL._AC_UY327_FMwebp_QL65_.jpg" alt="2025 Laptop,15.6In Windows 11" />
+      <h4>M2025 Laptop,15.6In Windows 11</h4>
+      <p>$390.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/712dp0yAydL._AC_UY327_FMwebp_QL65_.jpg" alt="Apple 2025 MacBook " />
+      <h4>Apple 2025 MacBook Air 13-inch Laptop</h4>
+      <p>$900.99</p>
+      <button>Add to Cart</button>
+    </div>
+    
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71xEfn8Qi8L._AC_UY327_FMwebp_QL65_.jpg" alt="Business Laptop" />
+      <h4>HP 15.6" Business Laptop</h4>
+      <p>$920.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61IpRGnny7L._AC_UY327_FMwebp_QL65_.jpg" alt="HP Portable Laptop" />
+      <h4>HP Portable Laptop</h4>
+      <p>$690.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81divYKpeTL._AC_UY327_FMwebp_QL65_.jpg" alt="Ultral Light Laptop" />
+      <h4>HP 14" Ultral Light Laptop</h4>
+      <p>$300.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61wIXIgIfGL._AC_UY327_FMwebp_QL65_.jpg" alt="Laptop Windows 11" />
+      <h4>2025 Latest 15.6'' Laptop Windows 11</h4>
+      <p>$450.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71inR-6fxEL._AC_UY327_FMwebp_QL65_.jpg" alt="Business Laptop" />
+      <h4>Lenovo ThinkBook 16 G7 16" FHD+ Business Laptop</h4>
+      <p>$290.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81v73toaxML._AC_UL480_FMwebp_QL65_.jpg" alt="Dell Latitude" />
+      <h4>Dell Latitude 5550 15 5000 15.6</h4>
+      <p>$970.99</p>
       <button>Add to Cart</button>
     </div>
   </section>
