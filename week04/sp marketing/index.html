@@ -2,67 +2,295 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SP Marketing - Home</title>
-  <meta name="description" content="Welcome to SP Marketing, your trusted partner in digital marketing solutions." />
-  <meta name="author" content="Sunday Prince Augustine" />
-  <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <!-- Open Graph meta -->
-  <meta property="og:title" content="SP Marketing - Home" />
-  <meta property="og:description" content="Digital marketing solutions to grow your business." />
-  <meta property="og:image" content="images/logo.png" />
-  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SP Marketing Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background: #f2f2f2;
+      color: #131921;
+    }
+    header {
+      background: #131921;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .nav-menu a:hover {
+      background: #febd69;
+      color: #131921;
+    }
+    .search-box {
+      flex: 1;
+      margin: 0 20px;
+      display: flex;
+      min-width: 200px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 16px;
+    }
+    .search-box button {
+      background: #febd69;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    .search-box button:hover {
+      background: #f7a600;
+    }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .nav-links a:hover {
+      background: #febd69;
+      color: #131921;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      height: 450px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+    .about-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      line-height: 1.6;
+      font-size: 1.15rem;
+      color: #333;
+    }
+    .products {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+    .product {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .product img {
+      max-width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    .product h4 {
+      margin: 12px 0 8px 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #131921;
+    }
+    .product p {
+      font-size: 1.15rem;
+      color: #febd69;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .product button {
+      background: #febd69;
+      border: none;
+      padding: 12px 0;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .product button:hover {
+      background: #f7a600;
+    }
+    .footer {
+      background: #232f3e;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 60px;
+      border-radius: 0 0 12px 12px;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+    }
+    @media (max-width: 768px) {
+      .search-box {
+        flex-direction: column;
+        margin: 10px 0;
+        width: 100%;
+      }
+      .search-box input,
+      .search-box button {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
+      .nav-menu {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .nav-links {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .hero {
+        font-size: 2rem;
+        height: 300px;
+      }
+      .product img {
+        height: 130px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="SP Marketing Logo" /></a>
-      </div>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul id="primary-navigation" class="nav-links">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="README.md">Attributions</a></li>
-      </ul>
+    <div class="logo">SP Marketing</div>
+    
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search products..." />
+      <button>Search</button>
+    </div>
+    
+    <div class="nav-links">
+      <a href="#signin">Sign In</a>
+      <a href="#cart">Cart</a>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to SP Marketing</h1>
-      <p>Your trusted partner in digital marketing solutions to boost your brand and grow your business.</p>
-      <a href="services.html" class="btn-primary">Explore Our Services</a>
+  <section class="hero" id="home">
+    Empower Your Business with SP Marketing
+  </section>
+
+ <section class="about-text">
+      <h2>Welcome to SP Marketing</h2>
+      <p>At SP Marketing, we specialize in innovative marketing solutions designed to grow your business and amplify your brand’s voice. Founded with a passion for creativity and results, our team is dedicated to delivering tailored strategies that drive real success.</p>
+      <p>From digital campaigns to brand consulting, we combine data-driven insights with creative excellence to help our clients thrive in a competitive marketplace.</p>
     </section>
 
-    <section class="features">
-      <article>
-        <h2>SEO Optimization</h2>
-        <p>Increase your website visibility and rankings on search engines.</p>
-      </article>
-      <article>
-        <h2>Social Media Marketing</h2>
-        <p>Engage your audience and grow your social presence on multiple platforms.</p>
-      </article>
-      <article>
-        <h2>Content Creation</h2>
-        <p>Professional content that resonates with your target audience.</p>
-      </article>
-    </section>
-  </main>
+  <section class="products" id="services">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Social Media Marketing" />
+      <h4>Social Media Marketing</h4>
+      <p>$199.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="SEO Optimization" />
+      <h4>SEO Optimization</h4>
+      <p>$299.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80" alt="Content Creation" />
+      <h4>Content Creation</h4>
+      <p>$149.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Digital Advertising" />
+      <h4>Digital Advertising</h4>
+      <p>$249.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=400&q=80" alt="Email Marketing" />
+      <h4>Email Marketing</h4>
+      <p>$129.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=400&q=80" alt="Brand Strategy" />
+      <h4>Brand Strategy</h4>
+      <p>$179.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
 
-  <footer>
+  <footer class="footer">
     <p>&copy; 2025 SP Marketing. All rights reserved.</p>
-    <p><a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Project Demo Video</a></p>
   </footer>
 
-  <script src="js/main.js" type="module"></script>
+  <script src="main.js"></script>
+
 </body>
 </html>
