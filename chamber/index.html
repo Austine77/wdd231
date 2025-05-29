@@ -4,30 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Welcome to the Essien Udim Chamber homepage, supporting local entrepreneurs and promoting economic growth in Essien Udim Local Government Area."
-  />
+  <meta name="description" content="Essien Udim Chamber of Commerce Homepage" />
   <meta name="author" content="Sunday Prince Augustine" />
   <meta property="og:title" content="Essien Udim Chamber of Commerce - Home" />
   <meta property="og:description" content="Welcome to the Chamber of Commerce homepage" />
   <meta property="og:image" content="images/hero.jpg" />
   <meta property="og:url" content="https://austine77.github.io/wdd231/chamber/index.html" />
-  <title>Essien Udim Chamber of Commerce - Home</title>
+  <title>Essien Udim Chamber of Commerce</title>
   <link rel="icon" href="images/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="logo.jpg" alt="Essien Udim Chamber of Commerce Logo" />
+      <img src="images/logo.jpg" alt="Essien Udim Chamber Logo" />
       <div>
         <h1>Essien Udim L.G.A</h1>
         <p>Chamber of Commerce</p>
@@ -35,52 +29,60 @@
     </div>
     <nav>
       <ul>
-        <li><a href="https://austine77.github.io/wdd231/chamber/index.html" class="active">Home</a></li>
-        <li><a href="https://austine77.github.io/wdd231/chamber/directory.html">Directory</a></li>
-        <li><a href="#">Join</a></li>
-        <li><a href="#">Discover</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <img src="hero1.jpg" alt="Scalable, responsive hero image" />
-      <button class="hero-btn">Welcome to Essien Udim</button>
+      <picture>
+        <source srcset="images/hero-small.jpg" media="(max-width: 600px)">
+        <img src="images/hero-1.jpg" alt="Essien Udim Chamber scenery" loading="lazy" />
+      </picture>
+      <button class="hero-btn" aria-label="Click to learn more">Join the Movement</button>
     </section>
 
     <section class="welcome-text">
-      <h2>Welcome to the Essien Udim Chamber of Commerce</h2>
-      <p>
-        The Essien Udim Chamber of Commerce is dedicated to promoting economic growth,
-        supporting local businesses, and fostering community collaboration in Essien Udim Local Government Area.
-        We provide valuable resources, networking opportunities,
-        and advocacy for entrepreneurs and stakeholders.
-      </p>
-      <p>
-        Explore our website to learn about upcoming events,
-        meet local businesses in our directory, and find out how you can join
-        our chamber.
-      </p>
+      <h2>Welcome to the Chamber</h2>
+      <p>We promote economic growth and support local businesses in Essien Udim L.G.A. Connect, grow, and thrive with us.</p>
     </section>
 
     <section class="quick-links">
       <article>
         <h3>Upcoming Events</h3>
-        <p>Join our Business Networking Mixer, Workshops, and Trade Fairs to connect with the community.</p>
-        <a href="#">See Events</a>
+        <p>June 10: Business Mixer @ Community Hall</p>
+        <a href="https://www.eventbrite.com/e/mcarthur-group-community-outreach-inc-summer-business-networking-mixer-tickets-1299995283889" target="_blank" rel="noopener noreferrer">See Events</a>
       </article>
-
       <article>
         <h3>Business Directory</h3>
-        <p>Discover trusted local businesses and services in Essien Udim L.G.A.</p>
-        <a href="https://austine77.github.io/wdd231/chamber/directory.html">View Directory</a>
+        <p>Find reliable local businesses and services.</p>
+        <a href="directory.html">View Directory</a>
       </article>
-
       <article>
-        <h3>Become a Member</h3>
-        <p>Support your local economy and gain exclusive access to resources by joining the Chamber.</p>
-        <a href="https://austine77.github.io/wdd231/chamber/join.html">Join Now</a>
+        <h3>Join the Chamber</h3>
+        <p>Support the community and enjoy exclusive member benefits.</p>
+        <a href="join.html">Join Now</a>
+      </article>
+    </section>
+
+    <section class="weather">
+      <h2>Essien Udim Weather</h2>
+      <div id="weather-widget">
+        <div id="weather-icon" style="font-size: 2.5rem;">⏳</div>
+        <p id="weather-info">Loading weather data...</p>
+      </div>
+    </section>
+
+    <section class="spotlight">
+      <h2>Company Spotlight</h2>
+      <article>
+        <h3>AkwaTech Solutions</h3>
+        <p>Innovating digital tools for small businesses across Akwa Ibom.</p>
+        <a href="#">Visit AkwaTech</a>
       </article>
     </section>
   </main>
@@ -89,59 +91,77 @@
     <div class="footer-content">
       <address>
         <strong>Essien Udim Chamber of Commerce</strong><br />
-        1, Midim Atan, Ekpeyung Atai,<br />
-        Essien Udim L.G.A, Akwa Ibom State, Nigeria<br />
+        1 Midim Atan, Ekpeyung Atai, Akwa Ibom, Nigeria<br />
         info@essien-udin-chamber.org<br />
         (+234) 912-919-3069
       </address>
 
       <div class="social">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener">
-          <img src="facebook.svg" alt="Facebook" />
-        </a>
-        <a href="https://www.twitter.com/" target="_blank" rel="noopener">
-          <img src="twitter.svg" alt="Twitter" />
-        </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
-          <img src="instagram.svg" alt="Instagram" />
-        </a>
+        <a href="https://facebook.com" target="_blank"><img src="images/facebook.svg" alt="Facebook" /></a>
+        <a href="https://twitter.com" target="_blank"><img src="images/twitter.svg" alt="Twitter" /></a>
+        <a href="https://instagram.com" target="_blank"><img src="images/instagram.svg" alt="Instagram" /></a>
       </div>
 
       <div class="developer-info">
-        <p>
-          WDD231 Class Project<br />
-          Sunday Prince Augustine<br />
-          &copy; 2025 Essien Udim Chamber of Commerce
-        </p>
+        <p>WDD231 Class Project – Sunday Prince Augustine</p>
         <p id="lastModified"></p>
       </div>
     </div>
 
     <div class="centered-footer">
-      <p>©2025 🌺 Sunday Prince Augustine @ SP Web & Software Solution 🌴Brigham Young University- Idaho. All rights
-        reserved</p>
+      <p>&copy; 2025 🌺 Sunday Prince Augustine @ SP Web & Software Solution 🌴 BYU-Idaho</p>
     </div>
   </footer>
 
   <script>
-    // Display the last modified date in the footer in a readable format
-    document.addEventListener("DOMContentLoaded", () => {
-      const lastModifiedElem = document.getElementById("lastModified");
-      if (lastModifiedElem) {
-        const lastModified = new Date(document.lastModified);
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-        lastModifiedElem.textContent = `Last Modified: ${lastModified.toLocaleString(undefined, options)}`;
-      }
+  document.addEventListener("DOMContentLoaded", () => {
+    const lastModifiedElem = document.getElementById("lastModified");
+    if (lastModifiedElem) {
+      const lastModified = new Date(document.lastModified);
+      lastModifiedElem.textContent = `Last Modified: ${lastModified.toLocaleString()}`;
+    }
 
-      // Alert message when the hero button is clicked
-      const heroButton = document.querySelector(".hero button");
-      if (heroButton) {
-        heroButton.addEventListener("click", () => {
-          alert("Welcome to Essien Udim Chamber of Commerce!");
-        });
-      }
-    });
-  </script>
+    const heroButton = document.querySelector(".hero-btn");
+    if (heroButton) {
+      heroButton.addEventListener("click", () => {
+        alert("Thank you for visiting the Chamber of Commerce!");
+      });
+    }
+
+    // Weather fetch
+    const apiKey = 'e0f4b652f766325ff931f7d730319e5a';
+    const lat = 5.138166;
+    const lon = 7.545950;
+
+    const weatherIconMap = {
+      "Clear": "☀️",
+      "Clouds": "☁️",
+      "Rain": "🌧️",
+      "Drizzle": "🌦️",
+      "Thunderstorm": "⛈️",
+      "Snow": "❄️",
+      "Mist": "🌫️",
+      "Fog": "🌫️"
+    };
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=5.138166&lon=7.545950&appid=e0f4b652f766325ff931f7d730319e5a&units=metric`)
+      .then(response => response.json())
+      .then(data => {
+        const temp = Math.round(data.main.temp);
+        const condition = data.weather[0].main;
+        const description = data.weather[0].description;
+        const icon = weatherIconMap[condition] || "🌈";
+
+        document.getElementById('weather-icon').textContent = icon;
+        document.getElementById('weather-info').textContent = `${temp}°C - ${description}`;
+      })
+      .catch(err => {
+        document.getElementById('weather-info').textContent = "Error loading weather data.";
+        console.error(err);
+      });
+  });
+</script>
+
 </body>
 
 </html>
