@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the Essien Udim Chamber of Commerce. Fill out the application to become a member and grow your business." />
+  <meta name="author" content="Sunday Prince Augustine" />
+  <title>Join | Essien Udim Chamber</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body style="background-color: #f9f9f9; color: #333;">
+  <header style="background-color: #1E3A8A; color: white; padding: 1rem;">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="images/logo.jpg" alt="Essien Udim Chamber of Commerce Logo" style="height: 60px; margin-right: 1rem;" />
+      <div>
+        <h1 style="margin: 0;">Essien Udim L.G.A</h1>
+        <p style="margin: 0;">Chamber of Commerce</p>
+      </div>
+    </div>
+    <nav>
+      <ul style="display: flex; list-style: none; padding: 0; margin: 1rem 0 0;">
+        <li><a href="index.html" style="color: white; margin-right: 1rem;">Home</a></li>
+        <li><a href="directory.html" style="color: white; margin-right: 1rem;">Directory</a></li>
+        <li><a href="join.html" class="active" style="color: #FF8C00; font-weight: bold;">Join</a></li>
+        <li><a href="#" style="color: white; margin-left: 1rem;">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding: 2rem;">
+    <h2 style="color: #1E3A8A;">Join the Chamber</h2>
+
+    <form method="get" action="thankyou.html" class="membership-form" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 600px; margin-bottom: 2rem;">
+      <label>
+        First Name:
+        <input type="text" name="firstName" required />
+      </label>
+
+      <label>
+        Last Name:
+        <input type="text" name="lastName" required />
+      </label>
+
+      <label>
+        Organizational Title:
+        <input type="text" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" />
+      </label>
+
+      <label>
+        Email:
+        <input type="email" name="email" required placeholder="example@example.com" />
+      </label>
+
+      <label>
+        Mobile Phone:
+        <input type="tel" name="phone" required />
+      </label>
+
+      <label>
+        Business/Organization Name:
+        <input type="text" name="organization" required />
+      </label>
+
+      <label>
+        Membership Level:
+        <select name="membership">
+          <option value="np">NP Membership (Free for Non-Profits)</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+      </label>
+
+      <label>
+        Business Description:
+        <textarea name="description"></textarea>
+      </label>
+
+      <input type="hidden" name="timestamp" id="timestamp" />
+
+      <button type="submit" style="background-color: #1E3A8A; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: bold;">Submit Application</button>
+    </form>
+
+    <section class="membership-cards" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <div class="card np" onclick="openModal('npModal')" style="background: #4CAF50; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+        <h3>NP Membership</h3>
+        <p>Free for nonprofits</p>
+        <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
+      </div>
+
+      <div class="card bronze" onclick="openModal('bronzeModal')" style="background: #FF8C00; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+        <h3>Bronze Membership</h3>
+        <p>Basic benefits</p>
+        <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
+      </div>
+
+      <div class="card silver" onclick="openModal('silverModal')" style="background: #1E3A8A; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+        <h3>Silver Membership</h3>
+        <p>Intermediate benefits</p>
+        <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
+      </div>
+
+      <div class="card gold" onclick="openModal('goldModal')" style="background: #F44336; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+        <h3>Gold Membership</h3>
+        <p>Full benefits</p>
+        <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
+      </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="npModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('npModal')" style="color: #F44336;">&times;</span>
+        <h3>NP Membership Benefits</h3>
+        <p>Free promotion, community recognition, and networking for nonprofits.</p>
+      </div>
+    </div>
+
+    <div id="bronzeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('bronzeModal')" style="color: #F44336;">&times;</span>
+        <h3>Bronze Membership Benefits</h3>
+        <p>Newsletter features, basic directory listing, and event invitations.</p>
+      </div>
+    </div>
+
+    <div id="silverModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('silverModal')" style="color: #F44336;">&times;</span>
+        <h3>Silver Membership Benefits</h3>
+        <p>Includes bronze benefits plus event discounts and ad placements.</p>
+      </div>
+    </div>
+
+    <div id="goldModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('goldModal')" style="color: #F44336;">&times;</span>
+        <h3>Gold Membership Benefits</h3>
+        <p>All benefits included plus homepage spotlight and roundtable access.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background-color: #1E3A8A; color: white; padding: 2rem;">
+    <div class="footer-content" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <address style="flex: 1;">
+        <strong>Essien Udim Chamber of Commerce</strong><br />
+        1, Midim Atan, Ekpeyung Atai,<br />
+        Essien Udim L.G.A, Akwa Ibom State, Nigeria<br />
+        info@essien-udin-chamber.org<br />
+        (+234) 912-919-3069
+      </address>
+
+      <div class="social" style="flex: 1;">
+        <a href="#"><img src="images/facebook.svg" alt="Facebook" style="width: 32px; margin-right: 10px;" /></a>
+        <a href="#"><img src="images/twitter.svg" alt="Twitter" style="width: 32px; margin-right: 10px;" /></a>
+        <a href="#"><img src="images/instagram.svg" alt="Instagram" style="width: 32px;" /></a>
+      </div>
+
+      <div class="developer-info" style="flex: 1;">
+        <p>WDD231 Class Project<br />Sunday Prince Augustine<br />&copy; Essien Udim Chamber</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('timestamp').value = new Date().toISOString();
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</body>
+</html>
