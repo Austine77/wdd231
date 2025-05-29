@@ -7,30 +7,183 @@
   <meta name="author" content="Sunday Prince Augustine" />
   <title>Join | Essien Udim Chamber</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      color: #333;
+    }
+
+    header, footer {
+      background-color: #1E3A8A;
+      color: white;
+      padding: 1.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+
+    nav a.active {
+      color: #FF8C00;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    form.membership-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 0.3rem;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button[type="submit"] {
+      background-color: #1E3A8A;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #16307a;
+    }
+
+    .membership-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .membership-cards .card {
+      flex: 1 1 200px;
+      padding: 1rem;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .np { background-color: #4CAF50; }
+    .bronze { background-color: #FF8C00; }
+    .silver { background-color: #1E3A8A; }
+    .gold { background-color: #F44336; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 4rem;
+    }
+
+    footer .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      .membership-cards {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-<body style="background-color: #f9f9f9; color: #333;">
-  <header style="background-color: #1E3A8A; color: white; padding: 1rem;">
+<body>
+  <header>
     <div class="logo" style="display: flex; align-items: center;">
-      <img src="images/logo.jpg" alt="Essien Udim Chamber of Commerce Logo" style="height: 60px; margin-right: 1rem;" />
+      <img src="images/logo.jpg" alt="Essien Udim Chamber Logo" style="height: 60px; margin-right: 1rem;" />
       <div>
         <h1 style="margin: 0;">Essien Udim L.G.A</h1>
         <p style="margin: 0;">Chamber of Commerce</p>
       </div>
     </div>
     <nav>
-      <ul style="display: flex; list-style: none; padding: 0; margin: 1rem 0 0;">
-        <li><a href="index.html" style="color: white; margin-right: 1rem;">Home</a></li>
-        <li><a href="directory.html" style="color: white; margin-right: 1rem;">Directory</a></li>
-        <li><a href="join.html" class="active" style="color: #FF8C00; font-weight: bold;">Join</a></li>
-        <li><a href="#" style="color: white; margin-left: 1rem;">Discover</a></li>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
       </ul>
     </nav>
   </header>
 
-  <main style="padding: 2rem;">
+  <main>
     <h2 style="color: #1E3A8A;">Join the Chamber</h2>
 
-    <form method="get" action="thankyou.html" class="membership-form" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 600px; margin-bottom: 2rem;">
+    <form method="get" action="thankyou.html" class="membership-form">
       <label>
         First Name:
         <input type="text" name="firstName" required />
@@ -77,72 +230,44 @@
       </label>
 
       <input type="hidden" name="timestamp" id="timestamp" />
-
-      <button type="submit" style="background-color: #1E3A8A; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: bold;">Submit Application</button>
+      <button type="submit">Submit Application</button>
     </form>
 
-    <section class="membership-cards" style="display: flex; flex-wrap: wrap; gap: 1rem;">
-      <div class="card np" onclick="openModal('npModal')" style="background: #4CAF50; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+    <div class="membership-cards">
+      <div class="card np" onclick="openModal('npModal')">
         <h3>NP Membership</h3>
         <p>Free for nonprofits</p>
         <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
       </div>
 
-      <div class="card bronze" onclick="openModal('bronzeModal')" style="background: #FF8C00; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+      <div class="card bronze" onclick="openModal('bronzeModal')">
         <h3>Bronze Membership</h3>
         <p>Basic benefits</p>
         <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
       </div>
 
-      <div class="card silver" onclick="openModal('silverModal')" style="background: #1E3A8A; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+      <div class="card silver" onclick="openModal('silverModal')">
         <h3>Silver Membership</h3>
         <p>Intermediate benefits</p>
         <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
       </div>
 
-      <div class="card gold" onclick="openModal('goldModal')" style="background: #F44336; color: white; flex: 1; padding: 1rem; border-radius: 10px; cursor: pointer;">
+      <div class="card gold" onclick="openModal('goldModal')">
         <h3>Gold Membership</h3>
         <p>Full benefits</p>
         <a href="#!" role="button" style="color: white; text-decoration: underline;">More Info</a>
       </div>
-    </section>
+    </div>
 
     <!-- Modals -->
-    <div id="npModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('npModal')" style="color: #F44336;">&times;</span>
-        <h3>NP Membership Benefits</h3>
-        <p>Free promotion, community recognition, and networking for nonprofits.</p>
-      </div>
-    </div>
-
-    <div id="bronzeModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('bronzeModal')" style="color: #F44336;">&times;</span>
-        <h3>Bronze Membership Benefits</h3>
-        <p>Newsletter features, basic directory listing, and event invitations.</p>
-      </div>
-    </div>
-
-    <div id="silverModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('silverModal')" style="color: #F44336;">&times;</span>
-        <h3>Silver Membership Benefits</h3>
-        <p>Includes bronze benefits plus event discounts and ad placements.</p>
-      </div>
-    </div>
-
-    <div id="goldModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('goldModal')" style="color: #F44336;">&times;</span>
-        <h3>Gold Membership Benefits</h3>
-        <p>All benefits included plus homepage spotlight and roundtable access.</p>
-      </div>
-    </div>
+    <div id="npModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('npModal')">&times;</span><h3>NP Membership</h3><p>Free promotion, community recognition, and networking for nonprofits.</p></div></div>
+    <div id="bronzeModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('bronzeModal')">&times;</span><h3>Bronze Membership</h3><p>Newsletter features, basic directory listing, and event invitations.</p></div></div>
+    <div id="silverModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('silverModal')">&times;</span><h3>Silver Membership</h3><p>Includes bronze benefits plus event discounts and ad placements.</p></div></div>
+    <div id="goldModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('goldModal')">&times;</span><h3>Gold Membership</h3><p>All benefits included plus homepage spotlight and roundtable access.</p></div></div>
   </main>
 
-  <footer style="background-color: #1E3A8A; color: white; padding: 2rem;">
-    <div class="footer-content" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+  <footer>
+    <div class="footer-content">
       <address style="flex: 1;">
         <strong>Essien Udim Chamber of Commerce</strong><br />
         1, Midim Atan, Ekpeyung Atai,<br />
@@ -151,14 +276,14 @@
         (+234) 912-919-3069
       </address>
 
-      <div class="social" style="flex: 1;">
+      <div style="flex: 1;">
         <a href="#"><img src="images/facebook.svg" alt="Facebook" style="width: 32px; margin-right: 10px;" /></a>
         <a href="#"><img src="images/twitter.svg" alt="Twitter" style="width: 32px; margin-right: 10px;" /></a>
         <a href="#"><img src="images/instagram.svg" alt="Instagram" style="width: 32px;" /></a>
       </div>
 
-      <div class="developer-info" style="flex: 1;">
-        <p>WDD231 Class Project<br />Sunday Prince Augustine<br />&copy; Essien Udim Chamber</p>
+      <div style="flex: 1;">
+        <p>2025 Essien Udim Chamber<br />Sunday Prince Augustine<br />&copy; Essien Udim Chamber</p>
       </div>
     </div>
   </footer>
@@ -166,7 +291,7 @@
   <script>
     document.getElementById('timestamp').value = new Date().toISOString();
     function openModal(id) {
-      document.getElementById(id).style.display = 'block';
+      document.getElementById(id).style.display = 'flex';
     }
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
