@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Essien Udim Chamber of Commerce - Site Plan</title>
+
+  <style>
+    /* Color Scheme */
+    :root {
+      --primary-color: #1E3A8A;
+      --secondary-color: #4CAF50;
+      --accent1-color: #FF8C00;
+      --accent2-color: #F44336;
+      --text-color: #333;
+      --background-color: #fff;
+      --font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text-color);
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--secondary-color);
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      color: var(--secondary-color);
+    }
+
+    p {
+      max-width: 720px;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Wireframes Section */
+    #wireframes img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 4px solid var(--secondary-color);
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    #wireframes h3:nth-of-type(2) {
+      border-color: var(--accent2-color);
+      color: var(--accent2-color);
+    }
+
+    #wireframes hr {
+      border: none;
+      border-top: 3px solid var(--accent1-color);
+      margin: 2rem 0;
+    }
+
+    figcaption {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+      max-width: 720px;
+    }
+
+    /* Lists */
+    ul {
+      max-width: 720px;
+      margin-left: 1.2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Site Plan - Essien Udim Chamber of Commerce Website</h1>
+
+  <section id="project-overview">
+    <h2>Project Overview</h2>
+    <p>
+      The Essien Udim Chamber of Commerce website is designed to promote economic growth and business
+      development in the Essien Udim Local Government Area. The site offers local business
+      directories, event announcements, weather updates, and opportunities for community engagement.
+      The goal is to provide a user-friendly platform that connects entrepreneurs, stakeholders,
+      and residents.
+    </p>
+  </section>
+
+  <section id="goals">
+    <h2>Project Goals</h2>
+    <ul>
+      <li>Provide an easy-to-navigate directory of local businesses.</li>
+      <li>Promote upcoming events and workshops.</li>
+      <li>Showcase current weather and forecasts for planning.</li>
+      <li>Encourage community participation and membership.</li>
+      <li>Deliver a responsive and accessible website experience.</li>
+    </ul>
+  </section>
+
+  <section id="target-audience">
+    <h2>Target Audience</h2>
+    <p>
+      The website targets local business owners, entrepreneurs, investors, and community members
+      within Essien Udim L.G.A and the greater Akwa Ibom State region who seek networking,
+      resources, and information about the local economy.
+    </p>
+  </section>
+
+  <section id="content-strategy">
+    <h2>Content Strategy</h2>
+    <ul>
+      <li>Regularly updated business directory with contact and website links.</li>
+      <li>Detailed event listings including dates, locations, and descriptions.</li>
+      <li>Weather data including current conditions and short-term forecasts.</li>
+      <li>Informative articles and resources to support business growth.</li>
+      <li>Clear calls to action encouraging visitors to join or contact the chamber.</li>
+    </ul>
+  </section>
+
+   <section id="site-logo">
+    <h2>Website Logo</h2>
+    <img src="images/logo.jpg" alt="Website Logo" />
+  </section>
+
+  <section id="wireframes">
+    <h2>Wireframes</h2>
+    <p>
+      Wireframes provide a visual blueprint of the website layout and user interface, illustrating
+      how the content and navigation elements are structured on different screen sizes. This
+      helps ensure a user-friendly and intuitive design before development begins.
+    </p>
+
+    <h3>Mobile View Wireframe</h3>
+    <img src="images/wireframe-mobile.png" alt="Mobile wireframe showing responsive navigation menu, hero image, and stacked content sections" />
+    <figcaption>
+      Figure 1: Mobile wireframe illustrating a hamburger menu, vertical scrolling layout, and clear call-to-action button.
+    </figcaption>
+
+    <hr />
+
+    <h3 style="color: var(--accent2-color);">Desktop View Wireframe</h3>
+    <img 
+      src="images/wireframe-desktop.png" 
+      alt="Desktop wireframe showing horizontal navigation, grid layout for business directory, and sidebar with weather and events" 
+      style="border-color: var(--accent2-color);"
+    />
+    <figcaption>
+      Figure 2: Desktop wireframe depicting a fixed horizontal navigation bar, multi-column layout for directory listings, and side content panels.
+    </figcaption>
+  </section>
+
+  <section id="color-scheme">
+    <h2>Color Scheme</h2>
+    <p>The site uses the following color palette to maintain a consistent and visually appealing design:</p>
+    <ul>
+      <li><strong>Primary Color:</strong> #1E3A8A (Deep Blue)</li>
+      <li><strong>Secondary Color:</strong> #4CAF50 (Green)</li>
+      <li><strong>Accent Color 1:</strong> #FF8C00 (Orange)</li>
+      <li><strong>Accent Color 2:</strong> #F44336 (Red)</li>
+    </ul>
+  </section>
+
+  <section id="accessibility">
+    <h2>Accessibility Considerations</h2>
+    <ul>
+      <li>Use semantic HTML elements and proper heading structure.</li>
+      <li>Provide descriptive alt text for all images.</li>
+      <li>Ensure sufficient color contrast between text and background.</li>
+      <li>Keyboard navigable menus and buttons.</li>
+      <li>ARIA attributes on interactive elements where necessary.</li>
+      <li>Responsive design for various devices and screen sizes.</li>
+    </ul>
+  </section>
+
+  <section id="technology-stack">
+    <h2>Technology Stack</h2>
+    <ul>
+      <li>HTML5 for structure and semantics</li>
+      <li>CSS3 with Flexbox/Grid for layout and responsiveness</li>
+      <li>JavaScript for interactive features such as view toggles</li>
+      <li>Web Fonts from Google Fonts (Poppins and Bangers)</li>
+      <li>Hosting on GitHub Pages</li>
+    </ul>
+  </section>
+
+</body>
+
+</html>
