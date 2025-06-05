@@ -159,10 +159,82 @@
 <section id="site-logo">
   <h2>Website Logo</h2>
   <img src="images/logo1.png" alt="Essien Udim Chamber of Commerce Logo" width="150" height="auto" />
-
-  <h2>Website Map Track</h2>
-  <img src="website-map.png" alt="Visual Sitemap of the Chamber Website" width="600" height="auto" />
 </section>
+
+<section id="site-map-diagram">
+  <h2 style="text-align: center; color: #1E3A8A;">Website Map</h2>
+  <div class="tree">
+        <ul>
+          <li><span class="leaf">Home</span></li>
+          <li><span class="leaf">Directory</span></li>
+          <li><span class="leaf">Join</span></li>
+          <li><span class="leaf">Discover</span></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+/* Simple site map tree styling */
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tree li {
+  list-style-type: none;
+  text-align: center;
+  position: relative;
+  padding: 20px 10px 0 10px;
+}
+
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top: 2px solid #1E3A8A;
+  width: 50%;
+  height: 20px;
+}
+
+.tree li::before {
+  left: -50%;
+  border-right: 2px solid #1E3A8A;
+}
+
+.tree li::after {
+  right: -50%;
+  border-left: 2px solid #1E3A8A;
+}
+
+.tree li:only-child::before,
+.tree li:only-child::after {
+  content: none;
+}
+
+.tree li:only-child {
+  padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: none;
+}
+
+.tree .node,
+.tree .leaf {
+  border: 2px solid #1E3A8A;
+  display: inline-block;
+  padding: 8px 14px;
+  color: #1E3A8A;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: white;
+}
+</style>
 
   <section id="wireframes">
     <h2>Wireframes</h2>
