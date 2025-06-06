@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body>
@@ -177,34 +177,7 @@
 
   </footer>
 
-  <script src="scripts.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const gridBtn = document.getElementById('gridViewBtn');
-      const listBtn = document.getElementById('listViewBtn');
-      const directory = document.querySelector('.directory');
-
-      function setView(view) {
-        if (view === 'grid') {
-          directory.classList.add('grid-view');
-          directory.classList.remove('list-view');
-          gridBtn.setAttribute('aria-pressed', 'true');
-          listBtn.setAttribute('aria-pressed', 'false');
-        } else {
-          directory.classList.add('list-view');
-          directory.classList.remove('grid-view');
-          gridBtn.setAttribute('aria-pressed', 'false');
-          listBtn.setAttribute('aria-pressed', 'true');
-        }
-      }
-
-      // Default to grid view on load
-      setView('grid');
-
-      gridBtn.addEventListener('click', () => setView('grid'));
-      listBtn.addEventListener('click', () => setView('list'));
-    });
-  </script>
+  <script src="scripts/scripts.js" defer></script>
 </body>
 
 </html>

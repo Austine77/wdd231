@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -114,19 +114,6 @@
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const lastModifiedElem = document.getElementById("lastModified");
-    if (lastModifiedElem) {
-      const lastModified = new Date(document.lastModified);
-      lastModifiedElem.textContent = `Last Modified: ${lastModified.toLocaleString()}`;
-    }
-
-    const heroButton = document.querySelector(".hero-btn");
-    if (heroButton) {
-      heroButton.addEventListener("click", () => {
-        alert("Thank you for visiting the Chamber of Commerce!");
-      });
-    }
 
     // Weather fetch
     const apiKey = 'e0f4b652f766325ff931f7d730319e5a';
@@ -159,9 +146,10 @@
         document.getElementById('weather-info').textContent = "Error loading weather data.";
         console.error(err);
       });
-  });
+
 </script>
 
+<script src="scripts/scripts.js" defer></script>
 </body>
 
 </html>
