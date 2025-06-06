@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover Essien Udim - Attractions, Culture, and Community. Learn more about what makes this region unique." />
+  <meta name="author" content="Sunday Prince Augustine" />
+  <title>Discover Essien Udim</title>
+  <link rel="icon" href="images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* === Base Styles === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1E3A8A; /* PRIMARY */
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #FF8C00; /* ACCENT1 */
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    header {
+      background-color: #1E3A8A; /* PRIMARY */
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      width: 60px;
+      height: auto;
+      border-radius: 50%;
+      border: 2px solid #4CAF50; /* SECONDARY */
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      background-color: #FF8C00; /* ACCENT1 */
+      color: white;
+    }
+
+    footer {
+      background-color: #1E3A8A; /* PRIMARY */
+      color: white;
+      padding: 2rem 1rem;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    .footer-grid a img {
+      width: 30px;
+      margin: 0 0.5rem;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
+
+    .footer-grid a:hover img {
+      filter: brightness(0) invert(0.6) sepia(1) saturate(5) hue-rotate(10deg);
+    }
+
+    /* === Discover Page Layout === */
+    .discover-layout {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    #visit-message {
+      background-color: #4CAF50; /* SECONDARY */
+      color: white;
+      padding: 1rem;
+      border-left: 5px solid #FF8C00; /* ACCENT1 */
+      font-weight: 700;
+      border-radius: 5px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(30, 58, 138, 0.2); /* PRIMARY color shadow */
+      transition: transform 0.2s, box-shadow 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4); /* ACCENT1 */
+      border-color: #FF8C00; /* ACCENT1 */
+    }
+
+    .card h2 {
+      color: #1E3A8A; /* PRIMARY */
+      margin-bottom: 0.5rem;
+    }
+
+    .card address {
+      font-style: normal;
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0.5rem 0;
+    }
+
+    .card p {
+      color: #444;
+    }
+
+    .card button {
+      background-color: #4CAF50; /* SECONDARY */
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 6px rgba(76, 175, 80, 0.4);
+    }
+
+    .card button:hover {
+      background-color: #F44336; /* ACCENT2 */
+      box-shadow: 0 6px 10px rgba(244, 67, 54, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .discover-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Essien Udim Chamber Logo" />
+      <div>
+        <h1>Essien Udim</h1>
+        <p>Chamber of Commerce</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a class="active" href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="discover-layout">
+    <aside id="visit-message"></aside>
+    <section class="gallery">
+      <article class="card">
+        <h2>Unity Park</h2>
+        <figure>
+          <img src="images/unity-park.webp" alt="Unity Park" />
+        </figure>
+        <address>Ikot Ekpene Road, Essien Udim, AKS</address>
+        <p>A serene environment great for family picnics, cultural shows, and public relaxation.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Essien Udim Library</h2>
+        <figure>
+          <img src="images/library.webp" alt="Essien Udim Library" />
+        </figure>
+        <address>Main Street, Afaha Ikot Ebak, AKS</address>
+        <p>Offers extensive educational and historical resources about the area.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Ekpeyong Atai Market</h2>
+        <figure>
+          <img src="images/market.webp" alt="Ekpeyong Market" />
+        </figure>
+        <address>Central Essien Udim, AKS</address>
+        <p>One of the oldest markets showcasing local produce, crafts, and heritage.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Midim Hills</h2>
+        <figure>
+          <img src="images/midim-hills.webp" alt="Midim Hills" />
+        </figure>
+        <address>Midim Atan, Essien Udim, AKS</address>
+        <p>A picturesque landscape perfect for hiking and exploration.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Akwa Ibom Tech Hub</h2>
+        <figure>
+          <img src="images/techhub.webp" alt="Tech Hub" />
+        </figure>
+        <address>Innovation Close, Essien Udim</address>
+        <p>A modern facility encouraging youth and tech development in the region.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Essien Cultural Centre</h2>
+        <figure>
+          <img src="images/cultural-centre.webp" alt="Cultural Centre" />
+        </figure>
+        <address>Old Barracks Road, Essien Udim</address>
+        <p>Hosts festivals, arts exhibitions and promotes local traditions.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Urua Akpan Square</h2>
+        <figure>
+          <img src="images/uruakpan-square.webp" alt="Urua Akpan" />
+        </figure>
+        <address>Akpan Way, Essien Udim</address>
+        <p>Center of local commerce, a vibrant area with shops, vendors and culture.</p>
+        <button>Learn More</button>
+      </article>
+
+      <article class="card">
+        <h2>Essien Udim Stadium</h2>
+        <figure>
+          <img src="images/stadium.webp" alt="Stadium" />
+        </figure>
+        <address>Sport Avenue, Ikot Ebak</address>
+        <p>Hosts football matches, athletics, and other public gatherings.</p>
+        <button>Learn More</button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <address>
+        <strong>Essien Udim Chamber of Commerce</strong><br />
+        1, Midim Atan, Ekpeyung Atai,<br />
+        Essien Udim L.G.A, Akwa Ibom State, Nigeria<br />
+        info@essien-udin-chamber.org<br />
+        (+234) 912-919-3069
+      </address>
+      <div class="social">
+        <a href="#"><img src="images/facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.svg" alt="Twitter" /></a>
+        <a href="#"><img src="images/instagram.svg" alt="Instagram" /></a>
+      </div>
+      <div class="dev">
+        <p>&copy; 2025 Sunday Prince Augustine | BYU-Idaho</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const messageBox = document.getElementById("visit-message");
+    const today = Date.now();
+    const lastVisit = Number(localStorage.getItem("lastVisit")) || 0;
+    const msPerDay = 86400000;
+    let message = "Welcome! Let us know if you have any questions.";
+
+    if (lastVisit > 0) {
+      const daysSinceLastVisit = Math.floor((today - lastVisit) / msPerDay);
+      if (daysSinceLastVisit === 0) {
+        message = "Back so soon! Awesome!";
+      } else if (daysSinceLastVisit === 1) {
+        message = "You last visited 1 day ago.";
+      } else {
+        message = `You last visited ${daysSinceLastVisit} days ago.`;
+      }
+    }
+
+    messageBox.textContent = message;
+    localStorage.setItem("lastVisit", today);
+  </script>
+</body>
+
+</html>
