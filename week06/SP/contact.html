@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SP Marketing - Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+   <!-- Styles -->
+  <link rel="stylesheet" href="styles/styles.css"/>
+</head>
+<body>
+  <header>
+    <img src="images/logo.jpg" alt="SP Marketing Photo" class="site-logo" />
+    <nav class="nav-menu">
+      <a href="products.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us</h1>
+    <div class="contact-wrapper">
+
+      <!-- Form Section -->
+      <form action="#" method="POST" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject of your message" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Info Section -->
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i> 123 SP Avenue, Ijebu Ode, Ogun State, Nigeria</div>
+        <div><i class="fas fa-envelope"></i> contact@spmarketing.com</div>
+        <div><i class="fas fa-phone-alt"></i> +234 912 919 3069</div>
+
+        <!-- Google Map -->
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=Ijebu%20Ode&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 SP Marketing. All rights reserved.
+  </footer>
+
+  <script src="scripts/scripts.js" defer></script>
+  
+</body>
+</html>
