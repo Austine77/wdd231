@@ -111,3 +111,24 @@ document.addEventListener("DOMContentLoaded", () => {
     totalPriceEl.textContent = total.toFixed(2);
   }
 });
+y
+
+document.addEventListener("DOMContentLoaded", () => {
+  const updateElement = document.getElementById("last-update");
+
+  if (updateElement) {
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    const formattedTime = now.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+
+    updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
+  }
+});
