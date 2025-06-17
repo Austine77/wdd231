@@ -1,0 +1,26 @@
+[
+  {
+    "name": "SEO Optimization",
+    "price": 49.99
+  },
+  {
+    "name": "Social Media Management",
+    "price": 59.99
+  },
+  {
+    "name": "Content Marketing",
+    "price": 69.99
+  },
+  {
+    "name": "Email Campaigns",
+    "price": 39.99
+  },
+  {
+    "name": "Video Marketing",
+    "price": 89.99
+  },
+  {
+    "name": "Influencer Outreach",
+    "price": 79.99
+  }
+]

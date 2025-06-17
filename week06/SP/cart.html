@@ -4,7 +4,135 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shopping Cart</title>
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #1E3A8A;
+      --secondary-color: #4CAF50;
+      --accent1-color: #FF8C00;
+      --accent2-color: #F44336;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 1rem;
+    }
+
+    nav a:hover {
+      color: var(--accent1-color);
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    #cart-items {
+      background-color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    #cart-total {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .checkout-form {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkout-form h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+
+    .checkout-form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .checkout-form input,
+    .checkout-form select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .checkout-form button {
+      margin-top: 1.5rem;
+      background-color: var(--accent2-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .checkout-form button:hover {
+      background-color: #d32f2f;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    #last-update {
+      color: #ccc;
+      margin-top: 5px;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,17 +144,63 @@
 
   <main>
     <section id="cart-items">
-      <!-- Cart items will appear here -->
+      <!-- Cart items will be rendered here by JS -->
     </section>
 
     <section id="cart-total">
       <h3>Total: $<span id="total-price">0.00</span></h3>
     </section>
+
+    <section class="checkout-form">
+      <h2>Checkout</h2>
+      <form action="#" method="post">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Shipping Address</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+          <option value="">-- Select --</option>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bank-transfer">Bank Transfer</option>
+        </select>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     &copy; 2025 SP Marketing. All rights reserved.
+    <p id="last-update">Last Update: </p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const updateElement = document.getElementById("last-update");
+      if (updateElement) {
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        });
+        const formattedTime = now.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        });
+        updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
+      }
+    });
+  </script>
 
   <script src="scripts/cart.js" defer></script>
 </body>

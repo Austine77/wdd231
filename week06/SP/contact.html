@@ -6,20 +6,196 @@
   <title>SP Marketing - Contact Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-   <!-- Styles -->
-  <link rel="stylesheet" href="styles/styles.css"/>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <style>
+    :root {
+      --primary-color: #1E3A8A;
+      --secondary-color: #4CAF50;
+      --accent1-color: #FF8C00;
+      --accent2-color: #F44336;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .site-logo {
+      height: 50px;
+      border-radius: 5px;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent1-color);
+    }
+
+    .cta-button {
+      display: block;
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 1rem auto;
+      width: max-content;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: var(--accent1-color);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 2px solid var(--secondary-color);
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    form input,
+    form textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    form button {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    form button:hover {
+      background-color: var(--accent1-color);
+    }
+
+    .contact-info {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 2px solid var(--secondary-color);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: var(--accent2-color);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent1-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    #last-update {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="images/logo.jpg" alt="SP Marketing Photo" class="site-logo" />
     <nav class="nav-menu">
        <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="service.html">Service</a>
-      <a href="contact.html">Contact</a>
+      <a href="products.html">Products</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>>
     </nav>
   </header>
-<a href="products.html" class="cta-button">Shop Our Products</a>
+<style>footer {
+      background-color: #1E3A8A;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    #last-update {
+      font-size: 0.9rem;
+      color: #FF8C00;
+    }</style>
+  <a href="products.html" class="cta-button">Shop Our Products</a>
+
   <main>
     <h1>Contact Us</h1>
     <div class="contact-wrapper">
@@ -49,28 +225,46 @@
 
         <!-- Google Map -->
         <div class="map">
-          <iframe src="https://maps.google.com/maps?q=Ijebu%20Ode&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          <iframe src="https://maps.google.com/maps?q=Ijebu%20Ode&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <!-- Social Icons -->
         <div class="social-icons">
-          <a href="facebook.com"><i class="fab fa-facebook"></i></a>
-          <a href="twitter.com"><i class="fab fa-twitter"></i></a>
-          <a href="instagram.com"><i class="fab fa-instagram"></i></a>
-          <a href="linkedin.com"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
-
     </div>
   </main>
-  
 
- <footer>
-    <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴Brigham Young University- Idaho. All rights reserved</p>
-    <p class="update" id="last-update">Last Update:06/13/2025: 08:13AM  </p>
+  <footer>
+    <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴 Brigham Young University–Idaho. All rights reserved</p>
+    <p id="last-update">Last Update: </p>
   </footer>
 
-  <script src="scripts/scripts.js" defer></script>
-  <script src="scripts/last-update.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const updateElement = document.getElementById("last-update");
+      if (updateElement) {
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        });
+        const formattedTime = now.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        });
+
+        updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
+      }
+    });
+  </script>
 </body>
 </html>
+

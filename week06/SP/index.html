@@ -5,9 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - SP Marketing</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XXXXX" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/styles.css"/>
+  <style>
+    :root {
+      --primary-color: #1E3A8A;
+      --secondary-color: #4CAF50;
+      --accent1-color: #FF8C00;
+      --accent2-color: #F44336;
+    }
 
- <link rel="stylesheet" href="styles/styles.css"/>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    .site-logo {
+      height: 50px;
+      border-radius: 5px;
+    }
+
+    .nav-menu a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent1-color);
+    }
+
+    .cta-button {
+      background-color: var(--accent1-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      margin: 1rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background-color: var(--accent2-color);
+    }
+
+    .hero {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .features {
+      padding: 2rem;
+      background-color: #fff;
+    }
+
+    .features h2 {
+      color: var(--primary-color);
+    }
+
+    .feature-box {
+      padding: 1rem;
+      margin: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+    }
+
+    .gallery {
+      padding: 2rem;
+      background-color: #eee;
+    }
+
+    .gallery h2 {
+      color: var(--primary-color);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: #1E3A8A;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    #last-update {
+      font-size: 0.9rem;
+      color: #FF8C00;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,9 +124,9 @@
   <header>
     <img src="images/logo.jpg" alt="SP Marketing Logo" class="site-logo" />
     <nav class="nav-menu">
-     <a href="index.html">Home</a>
+      <a href="index.html">Home</a>
+      <a href="products.html" aria-current="page">Products</a>
       <a href="about.html">About</a>
-      <a href="service.html">Service</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -72,13 +181,31 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴Brigham Young University–Idaho. All rights reserved</p>
-    <p class="update" id="last-update">Last Update: 06/13/2025 – 08:13 AM</p>
+    <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴 Brigham Young University–Idaho. All rights reserved</p>
+    <p id="last-update">Last Update: </p>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="scripts/scripts.js" defer></script>
-  <script src="scripts/last-update.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const updateElement = document.getElementById("last-update");
+      if (updateElement) {
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        });
+        const formattedTime = now.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        });
 
+        updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
+      }
+    });
+  </script>
+  
 </body>
 </html>
