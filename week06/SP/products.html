@@ -4,17 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products - SP Marketing</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-M3SxOlRwGnpvY9D0hSbtlgXqFeXo9k+9W9QZGl+UshOL0E0Of1VY+8Iz5ZpqQ9CmNmOUPBXkJ1R2FjIvfTI3Gg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
+    :root {
+      --primary-color: #1E3A8A;
+      --secondary-color: #4CAF50;
+      --accent1-color: #FF8C00;
+      --accent2-color: #F44336;
+    }
 
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       background-color: #f9f9f9;
     }
+
     header {
       background-color: var(--primary-color);
       color: white;
@@ -40,55 +51,45 @@
       color: var(--accent1-color);
     }
 
-    .cta-button {
-      display: block;
-      width: max-content;
-      margin: 1rem auto;
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .cta-button:hover {
-      background-color: var(--accent1-color);
-    }
-
     h1, h2 {
       text-align: center;
-      color: #1E3A8A;
+      color: var(--primary-color);
     }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
       padding: 2rem;
     }
+
     .product {
       background-color: white;
-      border: 2px solid #4CAF50;
+      border: 1px solid var(--secondary-color);
       border-radius: 10px;
       padding: 1rem;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .product img {
       max-width: 100%;
       border-radius: 8px;
+      height: auto;
     }
+
     .product h4 {
-      color: #1E3A8A;
+      color: var(--primary-color);
       margin: 0.5rem 0;
     }
+
     .product p {
       font-weight: bold;
-      color: #FF8C00;
+      color: var(--accent1-color);
     }
+
     .add-to-cart {
-      background-color: #F44336;
+      background-color: var(--accent2-color);
       color: white;
       border: none;
       padding: 0.5rem 1rem;
@@ -97,20 +98,44 @@
       margin-top: 0.5rem;
       transition: background-color 0.3s ease;
     }
+
     .add-to-cart:hover {
       background-color: #d32f2f;
     }
+
     footer {
-      background-color: #1E3A8A;
+      background-color: var(--primary-color);
       color: white;
       padding: 1rem;
       text-align: center;
     }
-    
+
+    footer a {
+      color: var(--accent1-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     #last-update {
       font-size: 0.9rem;
-      color: #FF8C00;
+      color: var(--accent1-color);
     }
+
+    .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent1-color);
+    }
+
     @media screen and (max-width: 600px) {
       .nav-menu {
         display: flex;
@@ -123,7 +148,9 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- HEADER -->
   <header>
     <img src="images/logo.jpg" alt="SP Marketing Logo" class="site-logo" />
     <nav class="nav-menu">
@@ -134,88 +161,116 @@
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <section class="products-section">
-      <h1>Our Digital Marketing Services</h1>
-      <div class="product-list"></div>
-    </section>
-<section class="products" id="marketing-services">
+    <!-- MARKETING SERVICES -->
+     <section class="products-section">
+    <h1>Our Digital Marketing Services</h1>
+    <div class="product-list"></div>
+  </section>
+
+  <section class="products" id="marketing-services">
     <!-- Marketing Service Products -->
     <div class="product">
       <img src="images/clothe.jpg" alt="Social Media Marketing"/>
       <h4>Social Media Marketing</h4>
       <p>$199.99</p>
-      <button class="add-to-cart" data-name="Social Media Marketing" data-price="199.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Social Media Marketing" data-price="199.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/campain.jpg" alt="Email Marketing Campaign"/>
       <h4>Email Marketing Campaign</h4>
       <p>$149.99</p>
-      <button class="add-to-cart" data-name="Email Marketing Campaign" data-price="149.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Email Marketing Campaign" data-price="149.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/seo.jpg" alt="SEO Optimization"/>
       <h4>SEO Optimization</h4>
       <p>$299.99</p>
-      <button class="add-to-cart" data-name="SEO Optimization" data-price="299.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="SEO Optimization" data-price="299.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/content-creator.jpg" alt="Content Creation"/>
       <h4>Content Creation</h4>
       <p>$179.99</p>
-      <button class="add-to-cart" data-name="Content Creation" data-price="179.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Content Creation" data-price="179.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/graphic.jpg" alt="Graphic Design Services"/>
       <h4>Graphic Design Services</h4>
       <p>$129.99</p>
-      <button class="add-to-cart" data-name="Graphic Design Services" data-price="129.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Graphic Design Services" data-price="129.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/ppc.png" alt="PPC Advertising"/>
       <h4>PPC Advertising</h4>
       <p>$249.99</p>
-      <button class="add-to-cart" data-name="PPC Advertising" data-price="249.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="PPC Advertising" data-price="249.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/audit.png" alt="Website Audit"/>
       <h4>Website Audit</h4>
       <p>$99.99</p>
-      <button class="add-to-cart" data-name="Website Audit" data-price="99.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Website Audit" data-price="99.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/consultation.jpg" alt="Marketing Consultation"/>
       <h4>Marketing Consultation</h4>
       <p>$89.99</p>
-      <button class="add-to-cart" data-name="Marketing Consultation" data-price="89.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Marketing Consultation" data-price="89.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/brand.jpg" alt="Brand Strategy"/>
       <h4>Brand Strategy</h4>
       <p>$199.99</p>
-      <button class="add-to-cart" data-name="Brand Strategy" data-price="199.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Brand Strategy" data-price="199.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/video.png" alt="Video Marketing"/>
       <h4>Video Marketing</h4>
       <p>$299.99</p>
-      <button class="add-to-cart" data-name="Video Marketing" data-price="299.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Video Marketing" data-price="299.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/event.jpg" alt="Event Promotion"/>
       <h4>Event Promotion</h4>
       <p>$139.99</p>
-      <button class="add-to-cart" data-name="Event Promotion" data-price="139.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Event Promotion" data-price="139.99">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
       <img src="images/affiliate.jpg" alt="Affiliate Marketing"/>
       <h4>Affiliate Marketing</h4>
       <p>$159.99</p>
-      <button class="add-to-cart" data-name="Affiliate Marketing" data-price="159.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Affiliate Marketing" data-price="159.99">Add to Cart</button>
+      </a>
     </div>
-  </section>
+  </section>>
 
-  <section class="about-text" id="laptops">
+    <!-- LAPTOPS -->
+    <section class="about-text" id="laptops">
     <h2>Laptops & Computers</h2>
   </section>
 
@@ -224,116 +279,134 @@
       <img src="images/macbook1.jpg" alt="MacBook Air M1" />
       <h4>MacBook Air (M1, 2020) - 256GB</h4>
       <p>$899.99</p>
-      <button class="add-to-cart" data-name="MacBook Air M1" data-price="899.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="MacBook Air M1" data-price="899.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
-    <img src="images/macbook-pro.jpg" alt="MacBook Air M1" />
-  <h4>MacBook Pro (M2, 2022) - 512GB</h4>
-  <p>$1399.99</p>
-  <button class="add-to-cart" data-name="MacBook Pro M2" data-price="1399.99">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="images/macbook-m3.jpg" alt="MacBook Pro M3 Max" />
-  <h4>MacBook Pro (M3 Max, 2024) - 1TB</h4>
-  <p>$2899.99</p>
-  <button class="add-to-cart" data-name="MacBook Pro M3 Max" data-price="2899.99">Add to Cart</button>
-</div>
-
+      <img src="images/macbook-pro.jpg" alt="MacBook Pro M2" />
+      <h4>MacBook Pro (M2, 2022) - 512GB</h4>
+      <p>$1399.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="MacBook Pro M2" data-price="1399.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/macbook-m3.jpg" alt="MacBook Pro M3 Max" />
+      <h4>MacBook Pro (M3 Max, 2024) - 1TB</h4>
+      <p>$2899.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="MacBook Pro M3 Max" data-price="2899.99">Add to Cart</button>
+      </a>
+    </div>
     <div class="product">
       <img src="images/acer.jpg" alt="Acer Aspire 3 A315" />
       <h4>Acer Aspire 3 A315-24P-R7VH Slim Laptop</h4>
       <p>$449.99</p>
-      <button class="add-to-cart" data-name="Acer Aspire 3 A315" data-price="449.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Acer Aspire 3 A315" data-price="449.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/acer5.jpg" alt="Acer Aspire 5" />
       <h4>Acer Aspire 5 15 Slim Laptop</h4>
       <p>$350.99</p>
-      <button class="add-to-cart" data-name="Acer Aspire 5" data-price="350.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Acer Aspire 5" data-price="350.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/hp-omen.jpg" alt="HP Omen 15" />
       <h4>15.6 Inch Laptop</h4>
       <p>$649.99</p>
-      <button class="add-to-cart" data-name="15.6 Inch Laptop" data-price="649.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="15.6 Inch Laptop" data-price="649.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/jumper.jpg" alt="jumper Laptop" />
       <h4>jumper 16 Inch Laptop</h4>
       <p>$320.99</p>
-      <button class="add-to-cart" data-name="jumper Laptop" data-price="320.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="jumper Laptop" data-price="320.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/hp14.jpg" alt="HP 14 Laptop" />
       <h4>HP 14 Laptop, Intel Celeron N4020</h4>
       <p>$440.99</p>
-      <button class="add-to-cart" data-name="HP 14 Laptop" data-price="440.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="HP 14 Laptop" data-price="440.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/kopen.jpg" alt="2025 Kopen Laptop" />
       <h4>Kopen 2025 Laptop, 15.6In Windows 11</h4>
       <p>$390.99</p>
-      <button class="add-to-cart" data-name="M2025 Laptop" data-price="390.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="M2025 Laptop" data-price="390.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/apple2025.jpg" alt="MacBook Air" />
       <h4>Apple 2025 MacBook Air 13-inch Laptop</h4>
       <p>$900.99</p>
-      <button class="add-to-cart" data-name="MacBook Air" data-price="900.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="MacBook Air" data-price="900.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/business-laptop.jpg" alt="HP Business Laptop" />
       <h4>HP 15.6" Business Laptop</h4>
       <p>$920.99</p>
-      <button class="add-to-cart" data-name="HP Business Laptop" data-price="920.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="HP Business Laptop" data-price="920.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="images/lightweight.jpg" alt="HP Portable Laptop" />
       <h4>HP Portable Laptop</h4>
       <p>$690.99</p>
-      <button class="add-to-cart" data-name="HP Portable Laptop" data-price="690.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="HP Portable Laptop" data-price="690.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/81divYKpeTL._AC_UY327_FMwebp_QL65_.jpg" alt="Ultral Light Laptop" />
       <h4>HP 14" Ultral Light Laptop</h4>
       <p>$300.99</p>
-      <button class="add-to-cart" data-name="Ultral Light Laptop" data-price="300.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Ultral Light Laptop" data-price="300.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/61wIXIgIfGL._AC_UY327_FMwebp_QL65_.jpg" alt="Windows 11 Laptop" />
       <h4>2025 Latest 15.6'' Laptop Windows 11</h4>
       <p>$450.99</p>
-      <button class="add-to-cart" data-name="Windows 11 Laptop" data-price="450.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Windows 11 Laptop" data-price="450.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/71inR-6fxEL._AC_UY327_FMwebp_QL65_.jpg" alt="ThinkBook Laptop" />
       <h4>Lenovo ThinkBook 16 G7 16" Business Laptop</h4>
       <p>$290.99</p>
-      <button class="add-to-cart" data-name="ThinkBook Laptop" data-price="290.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="ThinkBook Laptop" data-price="290.99">Add to Cart</button>
+      </a>
     </div>
-
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/81v73toaxML._AC_UL480_FMwebp_QL65_.jpg" alt="Dell Latitude" />
       <h4>Dell Latitude 5550 15.6"</h4>
       <p>$970.99</p>
-      <button class="add-to-cart" data-name="Dell Latitude" data-price="970.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Dell Latitude" data-price="970.99">Add to Cart</button>
+      </a>
     </div>
-  </section>
+  </section>>
 
-  <section class="about-text" id="mobiles">
+    <!-- MOBILES -->
+    <section class="about-text" id="mobiles">
     <h2>Mobile Phones</h2>
   </section>
 
@@ -342,175 +415,163 @@
       <img src="images/iphone-1-pro.jpg" alt="iPhone 11 Pro Max" />
       <h4>iPhone 11 Pro Max</h4>
       <p>$699.99</p>
-      <button class="add-to-cart" data-name="iPhone 11 Pro Max" data-price="699.99">Add to Cart</button>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="iPhone 11 Pro Max" data-price="699.99">Add to Cart</button>
+      </a>
     </div>
-
-    <!-- iPhone 12 Pro Max -->
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/71MHTD3uL4L._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 12 Pro Max" />
-    <h4>iPhone 12 Pro Max - 128GB</h4>
-    <p>$699.99</p>
-    <button class="add-to-cart" data-name="iPhone 12 Pro Max" data-price="699.99">Add to Cart</button>
-  </div>
-
-  <!-- iPhone 13 Pro Max -->
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/61eDXs9QFNL._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 13 Pro Max" />
-    <h4>iPhone 13 Pro Max - 256GB</h4>
-    <p>$849.99</p>
-    <button class="add-to-cart" data-name="iPhone 13 Pro Max" data-price="849.99">Add to Cart</button>
-  </div>
-
-  <!-- iPhone 14 Pro Max -->
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 14 Pro Max" />
-    <h4>iPhone 14 Pro Max - 256GB</h4>
-    <p>$999.99</p>
-    <button class="add-to-cart" data-name="iPhone 14 Pro Max" data-price="999.99">Add to Cart</button>
-  </div>
-
-  <!-- iPhone 15 Pro Max -->
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/81fxjeu8fdL._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 15 Pro Max" />
-    <h4>iPhone 15 Pro Max - 512GB</h4>
-    <p>$119.99</p>
-    <button class="add-to-cart" data-name="iPhone 15 Pro Max" data-price="1199.99">Add to Cart</button>
-  </div>
-
-  <!-- Samsung Galaxy S22 Ultra -->
-  <div class="product">
-    <img src="images/samsung-s22.jpg" />
-    <h4>Samsung Galaxy S22 Ultra - 256GB</h4>
-    <p>$849.99</p>
-    <button class="add-to-cart" data-name="Samsung Galaxy S22 Ultra" data-price="849.99">Add to Cart</button>
-  </div>
-
-  <!-- Samsung Galaxy S23 Ultra -->
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/61VfL-aiToL._AC_UY327_FMwebp_QL65_.jpg" alt="Samsung Galaxy S23 Ultra" />
-    <h4>Samsung Galaxy S23 Ultra - 512GB</h4>
-    <p>$1099.99</p>
-    <button class="add-to-cart" data-name="Samsung Galaxy S23 Ultra" data-price="1099.99">Add to Cart</button>
-  </div>
-
-  <!-- Google Pixel 8 Pro -->
-  <div class="product">
-    <img src="images/google-pixel.jpg" />
-    <h4>Google Pixel 8 Pro - 128GB</h4>
-    <p>$899.99</p>
-    <button class="add-to-cart" data-name="Google Pixel 8 Pro" data-price="899.99">Add to Cart</button>
-  </div>
-
-  <!-- OnePlus 12 -->
-  <div class="product">
-    <img src="images/one-plus.jpg" alt="OnePlus 12" />
-    <h4>OnePlus 12 - 256GB</h4>
-    <p>$799.99</p>
-    <button class="add-to-cart" data-name="OnePlus 12" data-price="799.99">Add to Cart</button>
-  </div>
-
-  <!-- Xiaomi 13 Pro -->
-  <div class="product">
-    <img src="images/xiaomi-13.jpg" alt="Xiaomi 13 Pro" />
-    <h4>Xiaomi 13 Pro - 256GB</h4>
-    <p>$769.99</p>
-    <button class="add-to-cart" data-name="Xiaomi 13 Pro" data-price="769.99">Add to Cart</button>
-  </div>
-
-  <!-- Sony Xperia 1 V -->
-  <div class="product">
-    <img src="images/sony-xperia.jpg" alt="Sony Xperia 1 V" />
-    <h4>Sony Xperia 1 V - 256GB</h4>
-    <p>$1199.99</p>
-    <button class="add-to-cart" data-name="Sony Xperia 1 V" data-price="1199.99">Add to Cart</button>
-  </div>
-
-  <!-- Asus ROG Phone 8 Pro -->
-  <div class="product">
-    <img src="images/asus-rog.jpg" alt="ROG Phone 8 Pro" />
-    <h4>Asus ROG Phone 8 Pro - 512GB</h4>
-    <p>$1099.99</p>
-    <button class="add-to-cart" data-name="ROG Phone 8 Pro" data-price="1099.99">Add to Cart</button>
-  </div>
-
-  <!-- Motorola Edge+ (2023) -->
-  <div class="product">
-    <img src="images/motorola.jpg" alt="Motorola Edge+" />
-    <h4>Motorola Edge+ (2023) - 512GB</h4>
-    <p>$799.99</p>
-    <button class="add-to-cart" data-name="Motorola Edge+" data-price="799.99">Add to Cart</button>
-  </div>
-
-  <!-- Nothing Phone 2 -->
-  <div class="product">
-    <img src="images/nothing-phone.jpg" alt="Nothing Phone 2" />
-    <h4>Nothing Phone 2 - 256GB</h4>
-    <p>$599.99</p>
-    <button class="add-to-cart" data-name="Nothing Phone 2" data-price="599.99">Add to Cart</button>
-  </div>
-
-  <!-- Realme GT 5 Pro -->
-  <div class="product">
-    <img src="images/realme.jpg" alt="Realme GT 5 Pro" />
-    <h4>Realme GT 5 Pro - 512GB</h4>
-    <p>$649.99</p>
-    <button class="add-to-cart" data-name="Realme GT 5 Pro" data-price="649.99">Add to Cart</button>
-  </div>
-
-  <!-- Vivo X100 Pro -->
-  <div class="product">
-    <img src="images/vivo.jpg" alt="Vivo X100 Pro" />
-    <h4>Vivo X100 Pro - 512GB</h4>
-    <p>$899.99</p>
-    <button class="add-to-cart" data-name="Vivo X100 Pro" data-price="899.99">Add to Cart</button>
-
-  </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71MHTD3uL4L._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 12 Pro Max" />
+      <h4>iPhone 12 Pro Max - 128GB</h4>
+      <p>$699.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="iPhone 12 Pro Max" data-price="699.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61eDXs9QFNL._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 13 Pro Max" />
+      <h4>iPhone 13 Pro Max - 256GB</h4>
+      <p>$849.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="iPhone 13 Pro Max" data-price="849.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 14 Pro Max" />
+      <h4>iPhone 14 Pro Max - 256GB</h4>
+      <p>$999.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="iPhone 14 Pro Max" data-price="999.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81fxjeu8fdL._AC_UY327_FMwebp_QL65_.jpg" alt="iPhone 15 Pro Max" />
+      <h4>iPhone 15 Pro Max - 512GB</h4>
+      <p>$1199.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="iPhone 15 Pro Max" data-price="1199.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/samsung-s22.jpg" alt="Samsung Galaxy S22 Ultra" />
+      <h4>Samsung Galaxy S22 Ultra - 256GB</h4>
+      <p>$849.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Samsung Galaxy S22 Ultra" data-price="849.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61VfL-aiToL._AC_UY327_FMwebp_QL65_.jpg" alt="Samsung Galaxy S23 Ultra" />
+      <h4>Samsung Galaxy S23 Ultra - 512GB</h4>
+      <p>$1099.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Samsung Galaxy S23 Ultra" data-price="1099.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/google-pixel.jpg" alt="Google Pixel 8 Pro" />
+      <h4>Google Pixel 8 Pro - 128GB</h4>
+      <p>$899.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Google Pixel 8 Pro" data-price="899.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/one-plus.jpg" alt="OnePlus 12" />
+      <h4>OnePlus 12 - 256GB</h4>
+      <p>$799.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="OnePlus 12" data-price="799.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/xiaomi-13.jpg" alt="Xiaomi 13 Pro" />
+      <h4>Xiaomi 13 Pro - 256GB</h4>
+      <p>$769.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Xiaomi 13 Pro" data-price="769.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/sony-xperia.jpg" alt="Sony Xperia 1 V" />
+      <h4>Sony Xperia 1 V - 256GB</h4>
+      <p>$1199.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Sony Xperia 1 V" data-price="1199.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/asus-rog.jpg" alt="ROG Phone 8 Pro" />
+      <h4>Asus ROG Phone 8 Pro - 512GB</h4>
+      <p>$1099.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="ROG Phone 8 Pro" data-price="1099.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/motorola.jpg" alt="Motorola Edge+" />
+      <h4>Motorola Edge+ (2023) - 512GB</h4>
+      <p>$799.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Motorola Edge+" data-price="799.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/nothing-phone.jpg" alt="Nothing Phone 2" />
+      <h4>Nothing Phone 2 - 256GB</h4>
+      <p>$599.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Nothing Phone 2" data-price="599.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/realme.jpg" alt="Realme GT 5 Pro" />
+      <h4>Realme GT 5 Pro - 512GB</h4>
+      <p>$649.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Realme GT 5 Pro" data-price="649.99">Add to Cart</button>
+      </a>
+    </div>
+    <div class="product">
+      <img src="images/vivo.jpg" alt="Vivo X100 Pro" />
+      <h4>Vivo X100 Pro - 512GB</h4>
+      <p>$899.99</p>
+      <a href="cart.html">
+        <button class="add-to-cart" data-name="Vivo X100 Pro" data-price="899.99">Add to Cart</button>
+      </a>
+    </div>
   </section>
-    
   </main>
 
+  <!-- FOOTER -->
   <footer>
-  <div class="social-icons">
-    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://wa.me/+2349129193069" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/+2349129193069" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://github.com/austine77" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴 Brigham Young University–Idaho. All rights reserved</p>
+    <p><a href="https://www.youtube.com/watch?v=yourVideoID" target="_blank">📹 Watch JavaScript Project Demo</a></p>
+    <p id="last-update">Last Update: </p>
+  </footer>
 
-  <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴Brigham Young University–Idaho. All rights reserved</p>
-  <p id="last-update">Last Update: </p>
-</footer>
-
-
-  <!-- PRODUCT LOADING SCRIPT -->
-  <script type="module">
-    import { loadProducts } from './scripts/productModule.js';
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      const productList = document.querySelector(".product-list");
-      if (!productList) return;
-
-      const products = await loadProducts();
-
-      if (products.length === 0) {
-        productList.innerHTML = "<p>No products available.</p>";
-        return;
+  <!-- CART FUNCTIONALITY SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const updateElement = document.getElementById("last-update");
+      if (updateElement) {
+        const now = new Date();
+        updateElement.textContent = `Last Update: ${now.toLocaleString('en-US', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        })}`;
       }
 
-      const ul = document.createElement("ul");
-      products.forEach(product => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <h3>${product.name}</h3>
-          <p>Price: $${product.price.toFixed(2)}</p>
-          <button class="add-to-cart" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
-        `;
-        ul.appendChild(li);
-      });
-
-      productList.appendChild(ul);
-
-      ul.querySelectorAll(".add-to-cart").forEach(button => {
+      document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", () => {
           const name = button.dataset.name;
           const price = parseFloat(button.dataset.price);
@@ -528,24 +589,54 @@
     });
   </script>
 
-  <!-- LAST UPDATE FOOTER SCRIPT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const updateElement = document.getElementById("last-update");
-      if (updateElement) {
-        const now = new Date();
-        const formattedDate = now.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit'
+  <!-- PRODUCT LOADING SCRIPT -->
+  <script type="module">
+    import { loadMarketing, loadLaptops, loadMobiles } from './scripts/productModule.js';
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const marketingEl = document.getElementById("marketing-services");
+      const laptopEl = document.getElementById("laptop-section");
+      const mobileEl = document.getElementById("mobile-section");
+
+      const mkt = await loadMarketing();
+      const lap = await loadLaptops();
+      const mob = await loadMobiles();
+
+      [mkt, lap, mob].forEach((items, i) => {
+        const section = [marketingEl, laptopEl, mobileEl][i];
+        if (items.length === 0) {
+          section.innerHTML = "<p>No products available.</p>";
+          return;
+        }
+        items.forEach(({ name, price, image }) => {
+          const div = document.createElement("div");
+          div.className = "product";
+          div.innerHTML = `
+            <img src="${image}" alt="${name}" />
+            <h4>${name}</h4>
+            <p>$${price}</p>
+            <button class="add-to-cart" data-name="${name}" data-price="${price}">Add to Cart</button>
+          `;
+          section.appendChild(div);
         });
-        const formattedTime = now.toLocaleTimeString('en-US', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit'
+      });
+
+      // re-bind add-to-cart buttons from dynamic products
+      document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.name;
+          const price = parseFloat(button.dataset.price);
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1 });
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${name} added to cart!`);
         });
-        updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
-      }
+      });
     });
   </script>
 </body>

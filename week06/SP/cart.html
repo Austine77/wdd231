@@ -122,15 +122,45 @@
     footer {
       background-color: var(--primary-color);
       color: white;
-      text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent1-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     #last-update {
-      color: #ccc;
-      margin-top: 5px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      color: var(--accent1-color);
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent1-color);
+    }
+
+    @media screen and (max-width: 600px) {
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-menu a {
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
@@ -157,11 +187,26 @@
         <label for="full-name">Full Name</label>
         <input type="text" id="full-name" name="full-name" required>
 
+        <label for="phone-number">Mobile Number</label>
+        <input type="phone-number" id="phone-number" name="phone-number" required>
+
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" required>
 
         <label for="address">Shipping Address</label>
         <input type="text" id="address" name="address" required>
+
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="zip-code">Zip Code</label>
+        <input type="text" id="zip-code" name="zip-code" required>
 
         <label for="payment">Payment Method</label>
         <select id="payment" name="payment" required>
@@ -169,6 +214,9 @@
           <option value="credit-card">Credit Card</option>
           <option value="paypal">PayPal</option>
           <option value="bank-transfer">Bank Transfer</option>
+          <option value="google-pay">Google Pay</option>
+          <option value="apple-pay">Apple Pay</option>
+          <option value="crypto-corrency">Crypto Currency</option>
         </select>
 
         <button type="submit">Place Order</button>
@@ -177,31 +225,80 @@
   </main>
 
   <footer>
-    &copy; 2025 SP Marketing. All rights reserved.
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/+2349129193069" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://github.com/austine77" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+
+    <p>©2025 🌺 SP Marketing @ SP Web & Software Solution 🌴 Brigham Young University–Idaho. All rights reserved</p>
+    <p><a href="https://www.youtube.com/watch?v=yourVideoID" target="_blank">📹 Watch JavaScript Project Demo</a></p>
     <p id="last-update">Last Update: </p>
   </footer>
 
+  <!-- PRODUCT LOADING SCRIPT -->
+  <script type="module">
+    import { loadProducts } from './scripts/productModule.js';
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const productList = document.querySelector(".product-list");
+      if (!productList) return;
+
+      const products = await loadProducts();
+
+      if (products.length === 0) {
+        productList.innerHTML = "<p>No products available.</p>";
+        return;
+      }
+
+      const ul = document.createElement("ul");
+      products.forEach(product => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <h3>${product.name}</h3>
+          <p>Price: $${product.price.toFixed(2)}</p>
+          <button class="add-to-cart" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
+        `;
+        ul.appendChild(li);
+      });
+      productList.appendChild(ul);
+
+      ul.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.name;
+          const price = parseFloat(button.dataset.price);
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1 });
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${name} added to cart!`);
+        });
+      });
+    });
+  </script>
+
+  <!-- LAST UPDATE SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const updateElement = document.getElementById("last-update");
       if (updateElement) {
         const now = new Date();
-        const formattedDate = now.toLocaleDateString('en-GB', {
-          day: '2-digit',
+        updateElement.textContent = `Last Update: ${now.toLocaleString('en-US', {
+          year: 'numeric',
           month: '2-digit',
-          year: 'numeric'
-        });
-        const formattedTime = now.toLocaleTimeString('en-GB', {
+          day: '2-digit',
           hour: '2-digit',
           minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        });
-        updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
+          second: '2-digit'
+        })}`;
       }
     });
   </script>
 
-  <script src="scripts/cart.js" defer></script>
 </body>
 </html>

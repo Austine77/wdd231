@@ -6,14 +6,44 @@
       --accent2-color: #F44336;
     }
 
-    /* ====== GLOBAL STYLES ====== */
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #333;
-    }
+    /* Font classes */
+.bangers-regular {
+  font-family: 'Bangers', cursive, system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Body uses Poppins regular */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 400;
+  background: var(--gray-bg);
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Header with Bangers font */
+header {
+  font-family: 'Bangers', cursive, system-ui;
+  font-weight: 400;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
 
     a {
       text-decoration: none;
@@ -1150,4 +1180,5 @@
         font-size: 1rem;
       }
     }
+    
  
