@@ -29,141 +29,6 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles/styles.css"/>
   
-  <style>
-    :root {
-      --primary-color: #1E3A8A;
-      --secondary-color: #4CAF50;
-      --accent1-color: #FF8C00;
-      --accent2-color: #F44336;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .site-logo {
-      height: 50px;
-    }
-
-    .nav-menu a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-menu a:hover {
-      color: var(--accent1-color);
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: var(--primary-color);
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-
-    .product {
-      background-color: white;
-      border: 1px solid var(--secondary-color);
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .product img {
-      max-width: 100%;
-      border-radius: 8px;
-      height: auto;
-    }
-
-    .product h4 {
-      color: var(--primary-color);
-      margin: 0.5rem 0;
-    }
-
-    .product p {
-      font-weight: bold;
-      color: var(--accent1-color);
-    }
-
-    .add-to-cart {
-      background-color: var(--accent2-color);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 0.5rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .add-to-cart:hover {
-      background-color: #d32f2f;
-    }
-
-    footer {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--accent1-color);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    #last-update {
-      font-size: 0.9rem;
-      color: var(--accent1-color);
-    }
-
-    .social-icons a {
-      color: white;
-      margin: 0 0.5rem;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: var(--accent1-color);
-    }
-
-    @media screen and (max-width: 600px) {
-      .nav-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .nav-menu a {
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -571,7 +436,8 @@
     <p id="last-update">Last Update: </p>
   </footer>
 
-  <!-- CART FUNCTIONALITY SCRIPT -->
+  
+  <!-- LAST UPDATE SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const updateElement = document.getElementById("last-update");
@@ -586,74 +452,9 @@
           second: '2-digit'
         })}`;
       }
-
-      document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", () => {
-          const name = button.dataset.name;
-          const price = parseFloat(button.dataset.price);
-          const cart = JSON.parse(localStorage.getItem("cart")) || [];
-          const existing = cart.find(item => item.name === name);
-          if (existing) {
-            existing.quantity += 1;
-          } else {
-            cart.push({ name, price, quantity: 1 });
-          }
-          localStorage.setItem("cart", JSON.stringify(cart));
-          alert(`${name} added to cart!`);
-        });
-      });
     });
   </script>
 
-  <!-- PRODUCT LOADING SCRIPT -->
-  <script type="module">
-    import { loadMarketing, loadLaptops, loadMobiles } from './scripts/productModule.js';
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      const marketingEl = document.getElementById("marketing-services");
-      const laptopEl = document.getElementById("laptop-section");
-      const mobileEl = document.getElementById("mobile-section");
-
-      const mkt = await loadMarketing();
-      const lap = await loadLaptops();
-      const mob = await loadMobiles();
-
-      [mkt, lap, mob].forEach((items, i) => {
-        const section = [marketingEl, laptopEl, mobileEl][i];
-        if (items.length === 0) {
-          section.innerHTML = "<p>No products available.</p>";
-          return;
-        }
-        items.forEach(({ name, price, image }) => {
-          const div = document.createElement("div");
-          div.className = "product";
-          div.innerHTML = `
-            <img src="${image}" alt="${name}" />
-            <h4>${name}</h4>
-            <p>$${price}</p>
-            <button class="add-to-cart" data-name="${name}" data-price="${price}">Add to Cart</button>
-          `;
-          section.appendChild(div);
-        });
-      });
-
-      // re-bind add-to-cart buttons from dynamic products
-      document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", () => {
-          const name = button.dataset.name;
-          const price = parseFloat(button.dataset.price);
-          const cart = JSON.parse(localStorage.getItem("cart")) || [];
-          const existing = cart.find(item => item.name === name);
-          if (existing) {
-            existing.quantity += 1;
-          } else {
-            cart.push({ name, price, quantity: 1 });
-          }
-          localStorage.setItem("cart", JSON.stringify(cart));
-          alert(`${name} added to cart!`);
-        });
-      });
-    });
-  </script>
+ <script src="scripts/scripts.js" defer></script>
 </body>
 </html>

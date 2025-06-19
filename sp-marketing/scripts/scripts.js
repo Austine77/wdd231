@@ -24,63 +24,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Cart: add-to-cart button handler
-  const buttons = document.querySelectorAll('.add-to-cart');
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const name = button.getAttribute('data-name');
-      const price = parseFloat(button.getAttribute('data-price'));
-      const existingItem = cart.find(item => item.name === name);
 
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ name, price, quantity: 1 });
+    document.addEventListener("DOMContentLoaded", () => {
+      const updateElement = document.getElementById("last-update");
+      if (updateElement) {
+        const now = new Date();
+        updateElement.textContent = `Last Update: ${now.toLocaleString('en-US', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        })}`;
       }
 
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`${name} added to cart!`);
-    });
-  });
-
-  // 4. Cart display handler (only if on cart page)
-  if (document.getElementById("cart-items")) {
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartContainer = document.getElementById("cart-items");
-    const totalPriceEl = document.getElementById("total-price");
-    let total = 0;
-
-    if (cartItems.length === 0) {
-      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-    } else {
-      cartItems.forEach(item => {
-        const div = document.createElement("div");
-        div.classList.add("cart-item");
-        div.innerHTML = `<strong>${item.name}</strong> - $${item.price}`;
-        cartContainer.appendChild(div);
-        total += parseFloat(item.price);
+      document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.name;
+          const price = parseFloat(button.dataset.price);
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1 });
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${name} added to cart!`);
+        });
       });
-      totalPriceEl.textContent = total.toFixed(2);
-    }
-  }
-
-  // 5. Last update footer
-  const updateElement = document.getElementById("last-update");
-  if (updateElement) {
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-    const formattedTime = now.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
     });
 
-    updateElement.textContent = `Last Update: ${formattedDate} ${formattedTime}`;
-  }
-});
+
+    import { loadMarketing, loadLaptops, loadMobiles } from './scripts/productModule.js';
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const marketingEl = document.getElementById("marketing-services");
+      const laptopEl = document.getElementById("laptop-section");
+      const mobileEl = document.getElementById("mobile-section");
+
+      const mkt = await loadMarketing();
+      const lap = await loadLaptops();
+      const mob = await loadMobiles();
+
+      [mkt, lap, mob].forEach((items, i) => {
+        const section = [marketingEl, laptopEl, mobileEl][i];
+        if (items.length === 0) {
+          section.innerHTML = "<p>No products available.</p>";
+          return;
+        }
+        items.forEach(({ name, price, image }) => {
+          const div = document.createElement("div");
+          div.className = "product";
+          div.innerHTML = `
+            <img src="${image}" alt="${name}" />
+            <h4>${name}</h4>
+            <p>$${price}</p>
+            <button class="add-to-cart" data-name="${name}" data-price="${price}">Add to Cart</button>
+          `;
+          section.appendChild(div);
+        });
+      });
+
+      // re-bind add-to-cart buttons from dynamic products
+      document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.name;
+          const price = parseFloat(button.dataset.price);
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1 });
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${name} added to cart!`);
+        });
+      });
+    });

@@ -30,179 +30,7 @@
   <link rel="stylesheet" href="styles/styles.css"/>
 </head>
   
-  <style>
-    :root {
-      --primary-color: #1E3A8A;
-      --secondary-color: #4CAF50;
-      --accent1-color: #FF8C00;
-      --accent2-color: #F44336;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .site-logo {
-      height: 50px;
-    }
-
-    .nav-menu a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-menu a:hover,
-    .nav-menu a[aria-current="page"] {
-      color: var(--accent1-color);
-      border-bottom: 2px solid var(--accent1-color);
-    }
-
-    .cta-button {
-      display: block;
-      width: max-content;
-      margin: 1rem auto;
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: var(--accent1-color);
-    }
-
-    .hero {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      font-size: 2rem;
-    }
-
-    .about-section, .mission, .team {
-      padding: 2rem;
-      background-color: white;
-      margin: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .mission {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .mission-image img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .mission-text h3 {
-      color: var(--accent2-color);
-    }
-
-    .mission-text {
-      flex: 1;
-    }
-
-    .team-members {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-
-    .team-member {
-      text-align: center;
-      max-width: 200px;
-    }
-
-    .team-member img {
-      width: 100%;
-      border-radius: 50%;
-      border: 3px solid var(--primary-color);
-    }
-
-    .team-member h4 {
-      color: var(--primary-color);
-    }
-
-    .team-member p {
-      color: var(--accent2-color);
-      font-weight: bold;
-    }
-
-    footer {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--accent1-color);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    #last-update {
-      font-size: 0.9rem;
-      color: var(--accent1-color);
-    }
-
-    .social-icons a {
-      color: white;
-      margin: 0 0.5rem;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: var(--accent1-color);
-    }
-
-    @media screen and (max-width: 600px) {
-      .nav-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .nav-menu a {
-        margin: 0.5rem 0;
-      }
-
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  
 </head>
 <body>
   <header>
@@ -217,6 +45,8 @@
   <a href="products.html" class="cta-button">Shop Our Products</a>
 
   <main>
+        <a href="contact.html" class="cta-button">Contact Us</a>
+
     <div class="hero">About Us - SP Marketing</div>
 
     <section class="about-section" id="about">
@@ -229,8 +59,6 @@
         We specialize in e-commerce product marketing, digital advertising, content creation, and customer engagement strategies designed to grow your business.
       </p>
     </section>
-
-    <a href="contact.html" class="cta-button">Contact Us</a>
 
     <section class="mission">
       <div class="mission-image">
@@ -289,53 +117,8 @@
     <p><a href="https://www.youtube.com/watch?v=yourVideoID" target="_blank">📹 Watch JavaScript Project Demo</a></p>
     <p id="last-update">Last Update: </p>
   </footer>
-
-  <!-- PRODUCT LOADING SCRIPT -->
-  <script type="module">
-    import { loadProducts } from './scripts/productModule.js';
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      const productList = document.querySelector(".product-list");
-      if (!productList) return;
-
-      const products = await loadProducts();
-
-      if (products.length === 0) {
-        productList.innerHTML = "<p>No products available.</p>";
-        return;
-      }
-
-      const ul = document.createElement("ul");
-      products.forEach(product => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <h3>${product.name}</h3>
-          <p>Price: $${product.price.toFixed(2)}</p>
-          <button class="add-to-cart" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
-        `;
-        ul.appendChild(li);
-      });
-      productList.appendChild(ul);
-
-      ul.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", () => {
-          const name = button.dataset.name;
-          const price = parseFloat(button.dataset.price);
-          const cart = JSON.parse(localStorage.getItem("cart")) || [];
-          const existing = cart.find(item => item.name === name);
-          if (existing) {
-            existing.quantity += 1;
-          } else {
-            cart.push({ name, price, quantity: 1 });
-          }
-          localStorage.setItem("cart", JSON.stringify(cart));
-          alert(`${name} added to cart!`);
-        });
-      });
-    });
-  </script>
-
-  <!-- LAST UPDATE SCRIPT -->
+  
+ <!-- LAST UPDATE SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const updateElement = document.getElementById("last-update");
@@ -352,5 +135,7 @@
       }
     });
   </script>
+
+   <script src="scripts/scripts.js" defer></script>
 </body>
 </html>

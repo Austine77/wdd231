@@ -31,74 +31,7 @@
   <link rel="stylesheet" href="styles/styles.css"/>
   
   <style>
-    :root {
-      --primary-color: #1E3A8A;
-      --secondary-color: #4CAF50;
-      --accent1-color: #FF8C00;
-      --accent2-color: #F44336;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-
-    .site-logo {
-      height: 50px;
-      border-radius: 5px;
-    }
-
-    .nav-menu a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .nav-menu a:hover {
-      color: var(--accent1-color);
-    }
-
-    .cta-button {
-      display: block;
-      background-color: var(--secondary-color);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 1rem auto;
-      width: max-content;
-      border-radius: 5px;
-    }
-
-    .cta-button:hover {
-      background-color: var(--accent1-color);
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h1 {
-      color: var(--primary-color);
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
+  
     .contact-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -159,56 +92,9 @@
       height: 200px;
       border-radius: 5px;
     }
+ </style>
 
-    footer {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
 
-    footer a {
-      color: var(--accent1-color);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    #last-update {
-      font-size: 0.9rem;
-      color: var(--accent1-color);
-    }
-
-    .social-icons a {
-      color: white;
-      margin: 0 0.5rem;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: var(--accent1-color);
-    }
-
-    @media screen and (max-width: 600px) {
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .nav-menu a {
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -256,6 +142,7 @@
     </div>
   </main>
 
+   <!-- FOOTER -->
   <footer>
     <div class="social-icons">
       <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -268,51 +155,6 @@
     <p><a href="https://www.youtube.com/watch?v=yourVideoID" target="_blank">📹 Watch JavaScript Project Demo</a></p>
     <p id="last-update">Last Update: </p>
   </footer>
-
-  <!-- PRODUCT LOADING SCRIPT -->
-  <script type="module">
-    import { loadProducts } from './scripts/productModule.js';
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      const productList = document.querySelector(".product-list");
-      if (!productList) return;
-
-      const products = await loadProducts();
-
-      if (products.length === 0) {
-        productList.innerHTML = "<p>No products available.</p>";
-        return;
-      }
-
-      const ul = document.createElement("ul");
-      products.forEach(product => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <h3>${product.name}</h3>
-          <p>Price: $${product.price.toFixed(2)}</p>
-          <button class="add-to-cart" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
-        `;
-        ul.appendChild(li);
-      });
-      productList.appendChild(ul);
-
-      ul.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", () => {
-          const name = button.dataset.name;
-          const price = parseFloat(button.dataset.price);
-          const cart = JSON.parse(localStorage.getItem("cart")) || [];
-          const existing = cart.find(item => item.name === name);
-          if (existing) {
-            existing.quantity += 1;
-          } else {
-            cart.push({ name, price, quantity: 1 });
-          }
-          localStorage.setItem("cart", JSON.stringify(cart));
-          alert(`${name} added to cart!`);
-        });
-      });
-    });
-  </script>
 
   <!-- LAST UPDATE SCRIPT -->
   <script>
@@ -331,5 +173,7 @@
       }
     });
   </script>
+
+   <script src="scripts/scripts.js" defer></script>
 </body>
 </html>
